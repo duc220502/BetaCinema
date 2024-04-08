@@ -12,5 +12,10 @@ namespace BetaCinema.Entities
         public string Description { get; set; }
         public string Name { get; set; }
         public bool IsActive { get; set; }
+
+        public IEnumerable<Bill> Bills { get; set; }
+
+        public int RankCustomerId { get; set; }
+        public RankCustomer RankCustomer { get; set; }
     }
 }

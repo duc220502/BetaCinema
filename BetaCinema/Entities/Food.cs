@@ -8,5 +8,7 @@
         public string NameOfFood { get; set; }
         public bool IsActive { get; set; }
 
+        public IEnumerable<BillFood> BillFoods { get; set; }
+
     }
 }

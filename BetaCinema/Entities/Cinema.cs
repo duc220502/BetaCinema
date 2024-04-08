@@ -7,5 +7,7 @@
         public string Code { get; set; }
         public string NameOfCinema { get; set; }
         public bool  IsActive { get; set; }
+
+        public IEnumerable<Room> Rooms { get; set; }
     }
 }
