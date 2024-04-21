@@ -1,4 +1,6 @@
-﻿namespace BetaCinema.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BetaCinema.Entities
 {
     public class Bill:BaseEntity
     {
@@ -9,10 +11,11 @@
         public DateTime? UpdateTime { get; set; }
         public bool IsActive { get; set; }
 
+        [ForeignKey(nameof(User))]
         public int CustomerId { get; set; }
         public User User { get; set; }
 
-        public int PromotionId { get; set; }
+        public int? PromotionId { get; set; }
         public Promotion Promotion { get; set; }
         public int BillStatusId { get; set; }
         public BillStatus BillStatus { get; set; }

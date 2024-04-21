@@ -19,6 +19,7 @@ namespace BetaCinema.Controllers
         }
 
         [HttpPut("/api/user/ChangePassword")]
+        [Authorize]
         public IActionResult ChangePassword([FromForm] string oldPass, [FromForm] string newPass)
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
@@ -37,6 +38,7 @@ namespace BetaCinema.Controllers
         }
 
         [HttpPost("/api/user/ForgotPassword")]
+        [Authorize]
         public IActionResult ForgotPassword()
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
@@ -54,6 +56,7 @@ namespace BetaCinema.Controllers
             return Ok(result);
         }
         [HttpPut("/api/user/NewPassword")]
+        [Authorize]
         public IActionResult NewPassword([FromForm] string code, [FromForm] string newPass)
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);

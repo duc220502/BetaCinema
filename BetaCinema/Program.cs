@@ -1,4 +1,5 @@
 ﻿
+using BetaCinema.Payloads.Responses;
 using BetaCinema.Services.Implements;
 using BetaCinema.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -47,6 +48,8 @@ namespace BetaCinema
             }
             );
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped(typeof(ResponseObject<>));
+            builder.Services.AddScoped<IVnPayService, VnPayService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

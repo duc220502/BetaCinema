@@ -1,5 +1,6 @@
 ﻿using BetaCinema.DataContext;
 using BetaCinema.Entities;
+using BetaCinema.Handle;
 
 namespace BetaCinema.Services.Implements
 {

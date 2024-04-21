@@ -40,7 +40,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners");
+                    b.ToTable("Banners", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Bill", b =>
@@ -67,7 +67,7 @@ namespace BetaCinema.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PromotionId")
+                    b.Property<int?>("PromotionId")
                         .HasColumnType("int");
 
                     b.Property<double>("TotalMoney")
@@ -80,18 +80,15 @@ namespace BetaCinema.Migrations
                     b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BillStatusId");
 
+                    b.HasIndex("CustomerId");
+
                     b.HasIndex("PromotionId");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Bills");
+                    b.ToTable("Bills", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.BillFood", b =>
@@ -117,7 +114,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("FoodId");
 
-                    b.ToTable("BillFoods");
+                    b.ToTable("BillFoods", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.BillStatus", b =>
@@ -134,7 +131,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BillStatuses");
+                    b.ToTable("BillStatuses", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.BillTicket", b =>
@@ -160,7 +157,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("TicketId");
 
-                    b.ToTable("BillTickets");
+                    b.ToTable("BillTickets", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Cinema", b =>
@@ -192,7 +189,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cinemas");
+                    b.ToTable("Cinemas", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.ConfirmEmail", b =>
@@ -220,7 +217,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ConfirmEmails");
+                    b.ToTable("ConfirmEmails", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Food", b =>
@@ -251,7 +248,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Foods");
+                    b.ToTable("Foods", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.GeneralSetting", b =>
@@ -285,7 +282,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GeneralSettings");
+                    b.ToTable("GeneralSettings", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Movie", b =>
@@ -303,9 +300,6 @@ namespace BetaCinema.Migrations
                     b.Property<string>("Director")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("HeroImage")
                         .IsRequired()
@@ -348,7 +342,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("RateId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.MovieType", b =>
@@ -368,7 +362,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MovieTypes");
+                    b.ToTable("MovieTypes", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Promotion", b =>
@@ -413,7 +407,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("RankCustomerId");
 
-                    b.ToTable("Promotions");
+                    b.ToTable("Promotions", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.RankCustomer", b =>
@@ -440,7 +434,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RankCustomers");
+                    b.ToTable("RankCustomers", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Rate", b =>
@@ -461,7 +455,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rates");
+                    b.ToTable("Rates", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.RefreshToken", b =>
@@ -486,7 +480,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshTokens", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Role", b =>
@@ -507,7 +501,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Room", b =>
@@ -546,7 +540,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("CinemaId");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Rooms", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Schedule", b =>
@@ -589,7 +583,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("Schedules", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Seat", b =>
@@ -627,7 +621,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("SeatTypeId");
 
-                    b.ToTable("Seats");
+                    b.ToTable("Seats", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.SeatStatus", b =>
@@ -648,7 +642,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SeatStatuses");
+                    b.ToTable("SeatStatuses", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.SeatType", b =>
@@ -665,7 +659,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SeatTypes");
+                    b.ToTable("SeatTypes", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Ticket", b =>
@@ -698,7 +692,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("SeatId");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("Tickets", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.User", b =>
@@ -752,7 +746,7 @@ namespace BetaCinema.Migrations
 
                     b.HasIndex("UserStatusId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.UserStatus", b =>
@@ -773,7 +767,7 @@ namespace BetaCinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserStatuses");
+                    b.ToTable("UserStatuses", (string)null);
                 });
 
             modelBuilder.Entity("BetaCinema.Entities.Bill", b =>
@@ -784,17 +778,15 @@ namespace BetaCinema.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BetaCinema.Entities.Promotion", "Promotion")
+                    b.HasOne("BetaCinema.Entities.User", "User")
                         .WithMany("Bills")
-                        .HasForeignKey("PromotionId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BetaCinema.Entities.User", "User")
+                    b.HasOne("BetaCinema.Entities.Promotion", "Promotion")
                         .WithMany("Bills")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PromotionId");
 
                     b.Navigation("BillStatus");
 

@@ -3,7 +3,6 @@
     public class Movie:BaseEntity
     {
         public int MovieDuration { get; set; }
-        public DateTime EndTime { get; set; }
         public DateTime PremiereDate { get; set; }
         public string Description { get; set; }
         public string Director { get; set; }

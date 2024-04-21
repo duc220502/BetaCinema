@@ -3,72 +3,296 @@
   "WorkspaceRootPath": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\confirmemailconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\confirmemailconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_vnpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_vnpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\cinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\cinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\vnpaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\vnpaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\vnpaymentresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\vnpaymentresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\userconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\userconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_renewaccesstoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_renewaccesstoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\responses\\responseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\responses\\responseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\handle\\vnpaylibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\handle\\vnpaylibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsebillticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsebillticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\billconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\billconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsebillfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsebillfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\rankcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\rankcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_addbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_addbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\billticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\billticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\billfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\billfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\icinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\icinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iseatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iseatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\ischeduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\ischeduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\cinemaconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\cinemaconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\scheduleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\scheduleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_addmovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_addmovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\foodconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\foodconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\confirmemailconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\confirmemailconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsefood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsefood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsemoviedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsemoviedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_updatefood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_updatefood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_addseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_addseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_updateseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_updateseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_updateroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_updateroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_updatecinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_updatecinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_addroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_addroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_addfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_addfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseroomseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseroomseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsemovieroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsemovieroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsecinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsecinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsemoviesquantity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsemoviesquantity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseconfirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseconfirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\handle\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\handle\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\roomconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\roomconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponsetoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponsetoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\convertes\\userconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\convertes\\userconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_renewaccesstoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_renewaccesstoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,14 +307,6 @@
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\confirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseconfirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseconfirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\dataresponses\\dataresponseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\dataresponses\\dataresponseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -99,16 +315,8 @@
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\handle\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\handle\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\payloads\\datarequest\\request_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\payloads\\datarequest\\request_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -117,10 +325,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|d:\\duccode\\hvlts\\web api\\betacinema\\betacinema\\entities\\rankcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA173B03-138F-4C9E-8002-27ABCC1BCBF5}|BetaCinema\\BetaCinema.csproj|solutionrelative:betacinema\\entities\\rankcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -130,306 +334,408 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Program.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Program.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Program.cs",
-              "RelativeToolTip": "BetaCinema\\Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAQwDAAAABEAAAA",
+              "DocumentIndex": 6,
+              "Title": "VnPayController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\VnPayController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\VnPayController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\VnPayController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\VnPayController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:18:29.095Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "BetaCinema\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T17:27:31.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T17:21:59.314Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\UserService.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\UserService.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\UserService.cs",
-              "RelativeToolTip": "BetaCinema\\Services\\Implements\\UserService.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwGYAAABxAAAA",
+              "Title": "VnPayService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\VnPayService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\VnPayService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\VnPayService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\VnPayService.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwFQAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T17:01:24.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T06:08:47.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "IVnPayService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IVnPayService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IVnPayService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IVnPayService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IVnPayService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T06:02:02.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA1wBIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T15:56:47.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\AuthService.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\AuthService.cs",
               "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\AuthService.cs",
               "RelativeToolTip": "BetaCinema\\Services\\Implements\\AuthService.cs",
-              "ViewState": "AQIAAJEAAAAAAAAAAAAkwKwAAAAjAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-06T09:18:28.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "CinemaService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\CinemaService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\CinemaService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\CinemaService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\CinemaService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwA4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T17:00:26.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T13:43:02.976Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Request_VnPayment.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_VnPayment.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_VnPayment.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_VnPayment.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_VnPayment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T06:04:58.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\appsettings.json",
+              "RelativeDocumentMoniker": "BetaCinema\\appsettings.json",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\appsettings.json",
+              "RelativeToolTip": "BetaCinema\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-19T08:54:45.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VnPaymentResponseModel.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\VnPaymentResponseModel.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\VnPaymentResponseModel.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\VnPaymentResponseModel.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\VnPaymentResponseModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T16:52:53.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\FoodController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\FoodController.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAQwDIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T16:00:19.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Controllers\\UserController.cs",
               "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\UserController.cs",
               "RelativeToolTip": "BetaCinema\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwD8AAABCAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAUwDEAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T17:05:31.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ConfirmEmailConverter.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:34:22.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\EmailService.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\EmailService.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\EmailService.cs",
-              "RelativeToolTip": "BetaCinema\\Services\\Implements\\EmailService.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAQwAgAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:09:25.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAABfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:28:02.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "BetaCinema\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwEgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T15:56:47.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserConverter.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABUAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:48:23.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T17:18:05.432Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Program.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Program.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Program.cs",
+              "RelativeToolTip": "BetaCinema\\Program.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAQwDAAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T17:33:50.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CinemaController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\CinemaController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\CinemaController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\CinemaController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\CinemaController.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwD4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T16:27:37.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BillService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\BillService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\BillService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\BillService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\BillService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAIwBgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:44:44.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BillController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\BillController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\BillController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\BillController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\BillController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwCQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T17:14:05.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VnPayLibary.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\VnPayLibary.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Handle\\VnPayLibary.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\VnPayLibary.cs",
+              "RelativeToolTip": "BetaCinema\\Handle\\VnPayLibary.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAswGIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T16:46:28.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DataResponseBill.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBill.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseBill.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBill.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseBill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T03:25:03.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BillConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\BillConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\BillConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\BillConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\BillConverter.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAnwB4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:34:02.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DataResponseBillFood.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBillFood.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseBillFood.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBillFood.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseBillFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:29:58.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DataResponseBillTicket.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBillTicket.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseBillTicket.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseBillTicket.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseBillTicket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:30:14.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Bill.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Bill.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Bill.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Bill.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T08:54:53.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\ScheduleController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\ScheduleController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\ScheduleController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T04:06:52.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Promotion.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Promotion.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Promotion.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Promotion.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Promotion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T15:35:56.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "BaseService.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\BaseService.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\BaseService.cs",
               "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\BaseService.cs",
               "RelativeToolTip": "BetaCinema\\Services\\Implements\\BaseService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:02:29.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-06T09:02:29.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PageResult.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\PageResult.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Entities\\PageResult.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\PageResult.cs",
-              "RelativeToolTip": "BetaCinema\\Entities\\PageResult.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAzwBMAAAAFAAAA",
+              "DocumentIndex": 25,
+              "Title": "Request_AddBill.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddBill.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_AddBill.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddBill.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_AddBill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:05:30.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T03:28:43.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ResponseObject.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Responses\\ResponseObject.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Responses\\ResponseObject.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Responses\\ResponseObject.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\Responses\\ResponseObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T03:23:58.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Request_RenewAccessToken.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T08:34:53.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Request_Login.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T08:47:45.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DataResponseToken.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:53:19.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Role.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Role.cs",
-              "RelativeToolTip": "BetaCinema\\Entities\\Role.cs",
+              "DocumentIndex": 24,
+              "Title": "RankCustomer.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\RankCustomer.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\RankCustomer.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\RankCustomer.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\RankCustomer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T08:30:44.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ConfirmEmail.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\ConfirmEmail.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Entities\\ConfirmEmail.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\ConfirmEmail.cs",
-              "RelativeToolTip": "BetaCinema\\Entities\\ConfirmEmail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:33:36.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Cinema.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Cinema.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Cinema.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Cinema.cs",
-              "RelativeToolTip": "BetaCinema\\Entities\\Cinema.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:43:39.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\DataContext\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\DataContext\\AppDbContext.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\DataContext\\AppDbContext.cs",
-              "RelativeToolTip": "BetaCinema\\DataContext\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:44:24.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "DataResponseConfirmEmail.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T16:33:21.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DataResponseUser.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
-              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:40:20.787Z"
+              "WhenOpened": "2024-04-06T08:36:33.159Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
+              "Title": "BillTicket.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\BillTicket.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\BillTicket.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\BillTicket.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\BillTicket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T14:56:17.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BillFood.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\BillFood.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\BillFood.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\BillFood.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\BillFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T14:53:40.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IBillService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IBillService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IBillService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IBillService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IBillService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:43:23.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ICinemaService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\ICinemaService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\ICinemaService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\ICinemaService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\ICinemaService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T13:42:09.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:43:09.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ISeatService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\ISeatService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\ISeatService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\ISeatService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\ISeatService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T09:13:25.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IScheduleService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IScheduleService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IScheduleService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IScheduleService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IScheduleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T07:42:48.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IEmailService.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IEmailService.cs",
@@ -441,7 +747,523 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 35,
+              "Title": "CinemaConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\CinemaConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\CinemaConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\CinemaConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\CinemaConverter.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T14:11:07.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IMovieService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IMovieService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IMovieService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IMovieService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IMovieService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T09:06:24.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ScheduleConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ScheduleConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\ScheduleConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ScheduleConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\ScheduleConverter.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T03:20:10.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Request_AddMovie.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddMovie.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_AddMovie.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddMovie.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_AddMovie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T16:28:23.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FoodConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\FoodConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\FoodConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\FoodConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\FoodConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwBYAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T15:13:09.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Room.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Room.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Room.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Room.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:04:20.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ConfirmEmailConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\ConfirmEmailConverter.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:34:22.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DataResponseMovieDetail.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMovieDetail.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseMovieDetail.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMovieDetail.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseMovieDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T17:25:35.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DataResponseFood.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseFood.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseFood.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseFood.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:53:00.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Request_UpdateFood.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateFood.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateFood.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateFood.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T15:51:10.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "FoodService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\FoodService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\FoodService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\FoodService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\FoodService.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAiwEsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:30:53.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Request_UpdateSeat.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateSeat.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateSeat.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateSeat.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateSeat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T13:07:26.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Request_AddSeat.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddSeat.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_AddSeat.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddSeat.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_AddSeat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T09:14:49.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Request_UpdateCinema.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateCinema.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateCinema.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateCinema.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateCinema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T14:53:45.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Request_UpdateRoom.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateRoom.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateRoom.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_UpdateRoom.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_UpdateRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:51:30.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Request_AddFood.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddFood.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_AddFood.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddFood.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_AddFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:34:27.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Request_AddRoom.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddRoom.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_AddRoom.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_AddRoom.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_AddRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:03:38.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DataResponseRoom.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseRoom.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseRoom.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseRoom.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:07:16.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DataResponseRoomSeat.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseRoomSeat.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseRoomSeat.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseRoomSeat.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseRoomSeat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T17:18:12.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "DataResponseMovieRoom.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMovieRoom.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseMovieRoom.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMovieRoom.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseMovieRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T17:24:10.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "DataResponseCinema.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseCinema.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseCinema.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseCinema.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseCinema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T13:47:28.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DataResponseMoviesQuantity.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMoviesQuantity.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseMoviesQuantity.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseMoviesQuantity.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseMoviesQuantity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T09:04:53.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "DataResponseSeat.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseSeat.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseSeat.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseSeat.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseSeat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T09:18:38.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "DataResponseConfirmEmail.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseConfirmEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:33:21.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IRoomService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IRoomService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IRoomService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IRoomService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IRoomService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T07:58:14.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "InputHelper.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\InputHelper.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Handle\\InputHelper.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\InputHelper.cs",
+              "RelativeToolTip": "BetaCinema\\Handle\\InputHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T08:23:02.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\EmailService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\EmailService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\EmailService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\EmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:09:25.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Cinema.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Cinema.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Cinema.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Cinema.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Cinema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:43:39.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Food.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Food.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Food.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Food.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Food.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:36:31.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T17:00:26.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "RoomConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\RoomConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\RoomConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\RoomConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\RoomConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:10:28.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "BetaCinema\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T17:27:31.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Seat.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Seat.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Seat.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Seat.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Seat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T09:14:55.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "DataResponseToken.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:53:19.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "UserConverter.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\Convertes\\UserConverter.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAIBJwBwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T08:48:23.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Services\\Implements\\UserService.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "BetaCinema\\Services\\Implements\\UserService.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAgwF8AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T17:01:24.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\PageResult.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\PageResult.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\PageResult.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\PageResult.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:05:30.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "Request_RenewAccessToken.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_RenewAccessToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T08:34:53.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "Request_Login.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataRequest\\Request_Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T08:47:45.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\Role.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Role.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T08:30:44.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "ConfirmEmail.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\ConfirmEmail.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Entities\\ConfirmEmail.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\ConfirmEmail.cs",
+              "RelativeToolTip": "BetaCinema\\Entities\\ConfirmEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:33:36.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\DataContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\DataContext\\AppDbContext.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\DataContext\\AppDbContext.cs",
+              "RelativeToolTip": "BetaCinema\\DataContext\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:44:24.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "DataResponseUser.cs",
+              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
+              "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
+              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
+              "RelativeToolTip": "BetaCinema\\Payloads\\DataResponses\\DataResponseUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T08:40:20.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
               "Title": "Request_Register.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Payloads\\DataRequest\\Request_Register.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Payloads\\DataRequest\\Request_Register.cs",
@@ -453,7 +1275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 77,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\User.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Entities\\User.cs",
@@ -465,19 +1287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "InputHelper.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\InputHelper.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Handle\\InputHelper.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Handle\\InputHelper.cs",
-              "RelativeToolTip": "BetaCinema\\Handle\\InputHelper.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwCcAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:23:02.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 79,
               "Title": "Pagination.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\Pagination.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Entities\\Pagination.cs",
@@ -489,7 +1299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 80,
               "Title": "UserStatus.cs",
               "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\UserStatus.cs",
               "RelativeDocumentMoniker": "BetaCinema\\Entities\\UserStatus.cs",
@@ -498,18 +1308,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-06T08:47:35.659Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "RankCustomer.cs",
-              "DocumentMoniker": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\RankCustomer.cs",
-              "RelativeDocumentMoniker": "BetaCinema\\Entities\\RankCustomer.cs",
-              "ToolTip": "D:\\Duccode\\HvLts\\web api\\BetaCinema\\BetaCinema\\Entities\\RankCustomer.cs",
-              "RelativeToolTip": "BetaCinema\\Entities\\RankCustomer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T08:36:33.159Z"
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BetaCinema")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d708aa9596b06491ede50722cecfd009b8f7263")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cddb97d8182bfa369eb4c1d78927ebc8e1f7f48")]
 [assembly: System.Reflection.AssemblyProductAttribute("BetaCinema")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BetaCinema")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
