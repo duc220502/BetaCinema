@@ -67,5 +67,21 @@ namespace BetaCinema.Controllers
             return Ok(response);
         }
 
+        [HttpPatch("/api/food/GetFoodBestSaller")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetFoodBestSaller()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized("Không xác thực được người dùng.");
+            }
+            var response = _IFoodService.Get_BestSaller();
+            if (response.status != StatusCodes.Status200OK)
+                return StatusCode(response.status, new { message = response.Message });
+
+            return Ok(response);
+        }
+
     }
 }

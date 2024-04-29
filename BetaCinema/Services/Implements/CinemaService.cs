@@ -61,6 +61,7 @@ namespace BetaCinema.Services.Implements
 
         public ResponseObject<DataResponseCinema> DeleteCinema(int id)
         {
+
             if (InputHelper.checkNull(id.ToString()))
                 return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Vui lòng nhập id",null);
 
@@ -77,6 +78,27 @@ namespace BetaCinema.Services.Implements
 
 
         }
+
+        public ResponseObject<double> Get_Revenue(int CinemaId, DateTime d1, DateTime d2)
+        {
+            ResponseObject<double> responseObjectGetRevenue = new ResponseObject<double>();    
+            var cinemaCr = _context.Cinemas.FirstOrDefault(x => x.Id == CinemaId);
+
+            if (cinemaCr == null)
+                return responseObjectGetRevenue.ResponseError(StatusCodes.Status400BadRequest, "Rạp không tồn tại", 0);
+
+            if (d1 >= d2)
+                return responseObjectGetRevenue.ResponseError(StatusCodes.Status400BadRequest, "xem lại thời gian d1>d2", 0);
+
+            var listBill  = _context.Bills.Where(x=>x.CreateTime>d1 && x.CreateTime < d2);
+            double total = 0;
+            foreach( var bill in listBill)
+            {
+                total += bill.TotalMoney;
+            }
+
+            return responseObjectGetRevenue.ResponseSuccess("Thành công", total);
+        }   
 
         public ResponseObject<DataResponseCinema> UpdateCinema(int id, Request_UpdateCinema rq)
         {

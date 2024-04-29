@@ -38,7 +38,7 @@ namespace BetaCinema.Services.Implements
             vnpay.AddRequestData("vnp_ReturnUrl", _configuration["VnPay:PaymentBackReturnUrl"]);
 
             vnpay.AddRequestData("vnp_TxnRef", tick); // Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
-
+            vnpay.AddResponseData("vnp_BillId", billCr.Id.ToString());
             var paymentUrl = vnpay.CreateRequestUrl(_configuration["VnPay:BaseUrl"], _configuration["VnPay:HashSecret"]);
             return paymentUrl;
 
@@ -60,6 +60,7 @@ namespace BetaCinema.Services.Implements
             var vnp_SecureHash = collections.FirstOrDefault(p => p.Key == "vnp_SecureHash").Value;
             var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
             var vnp_OrderInfo = vnpay.GetResponseData("vnp_OrderInfo");
+            var billId = Convert.ToInt64(vnpay.GetResponseData("vnp_BillId"));
 
             bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, _configuration["VnPay:HashSecret"]);
             if (!checkSignature)
@@ -72,6 +73,20 @@ namespace BetaCinema.Services.Implements
                 {
                     Success = false,
                 });
+            EmailService emailService = new EmailService();
+            emailService.SendEmail("duc220502@gmail.com", "Thanh toán vnpay", "thành công");
+
+            var billCr = _context.Bills.FirstOrDefault(x => x.Id == billId);
+            var promotionCr = _context.Promotions.FirstOrDefault(x => x.Id == billCr.PromotionId);
+
+            billCr.IsActive = false;
+            billCr.BillStatusId = 2;
+            _context.Bills.Update(billCr);
+            
+            promotionCr.Quantity = promotionCr.Quantity - 1;
+            _context.Promotions.Update(promotionCr);
+
+            _context.SaveChanges();
 
             return _responseObject.ResponseSuccess("Thành công", new VnPaymentResponseModel
             {
@@ -83,6 +98,7 @@ namespace BetaCinema.Services.Implements
                 Token = vnp_SecureHash,
                 VnPayResponseCode = vnp_ResponseCode
             });
+
         }
     }
 }

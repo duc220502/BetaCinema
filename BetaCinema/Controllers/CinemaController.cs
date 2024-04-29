@@ -67,5 +67,21 @@ namespace BetaCinema.Controllers
 
             return Ok(response);
         }
+
+        [HttpPatch("/api/cinema/Get-CinemaRevenue")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult CinemaRevenue(int cinemaId, [FromQuery] DateTime d1, [FromQuery] DateTime d2)
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized("Không xác thực được người dùng.");
+            }
+            var response = _ICinemaService.Get_Revenue(cinemaId, d1,d2);
+            if (response.status != StatusCodes.Status200OK)
+                return StatusCode(response.status, new { message = response.Message });
+
+            return Ok(response);
+        }
     }
 }

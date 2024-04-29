@@ -11,5 +11,7 @@ namespace BetaCinema.Services.Interfaces
         ResponseObject<DataResponseCinema> UpdateCinema(int id,Request_UpdateCinema rq);
 
         ResponseObject<DataResponseCinema> DeleteCinema(int id);
+
+        ResponseObject<double> Get_Revenue(int CinemaId,DateTime d1,DateTime d2);
     }
 }

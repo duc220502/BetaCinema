@@ -5,6 +5,7 @@ using BetaCinema.Payloads.DataRequest;
 using BetaCinema.Payloads.DataResponses;
 using BetaCinema.Payloads.Responses;
 using BetaCinema.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BetaCinema.Services.Implements
 {
@@ -57,6 +58,39 @@ namespace BetaCinema.Services.Implements
             _context.SaveChanges();
 
             return _responseObject.ResponseSuccess("Xóa thành công", _converter.EntityToDTO(foodCr));
+        }
+
+        public ResponseObject<DataResponseBestSellingFood> Get_BestSaller()
+        {
+            ResponseObject < DataResponseBestSellingFood > response= new ResponseObject<DataResponseBestSellingFood>();
+            DateTime startDate = DateTime.Now.AddDays(-7);
+            DateTime endDate = DateTime.Now;
+
+         
+            var bestSellingFood = _context.BillFoods
+                .Include(bf => bf.Food)
+                .Where(bf => bf.Bill.CreateTime >= startDate && bf.Bill.CreateTime <= endDate)
+                .GroupBy(bf => bf.Food)
+                .Select(group => new
+                {
+                    Food = group.Key.NameOfFood,
+                    Quantity = group.Sum(bf => bf.Quantity)
+                })
+                .OrderByDescending(result => result.Quantity)
+                .FirstOrDefault();
+
+
+            if (bestSellingFood == null)
+                return response.ResponseError(StatusCodes.Status400BadRequest, "Không có mặt hàng nào bestSaller", null);
+
+            var dataResponse = new DataResponseBestSellingFood
+            {
+                FoodName = bestSellingFood.Food,
+                QuantitySold = bestSellingFood.Quantity
+            };
+
+            return response.ResponseSuccess("Thành công", dataResponse);
+
         }
 
         public ResponseObject<DataResponseFood> UpdateFood(int id, Request_UpdateFood rq)

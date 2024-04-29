@@ -78,10 +78,10 @@ namespace BetaCinema.Services.Implements
                     billTickets.Add(billTk);
                     total += ticketCr.PriceTicket * billTicket.Quantity;
                 }
-                var promotion = _context.Users
-                        .Where(u => u.Id == id)
-                        .Select(u => u.RankCustomer.Promotions.FirstOrDefault(p => p.IsActive)) 
-                        .FirstOrDefault();
+                var promotion = _context.Promotions.FirstOrDefault(x => x.Id == rq.PromotionId && x.IsActive == true);
+
+                if (promotion == null)
+                    return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Promotion không tồn tại", null);
 
                 Bill bill = new Bill()
                 {

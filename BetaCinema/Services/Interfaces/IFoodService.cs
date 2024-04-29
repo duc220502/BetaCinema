@@ -1,4 +1,5 @@
-﻿using BetaCinema.Payloads.DataRequest;
+﻿using Azure;
+using BetaCinema.Payloads.DataRequest;
 using BetaCinema.Payloads.DataResponses;
 using BetaCinema.Payloads.Responses;
 
@@ -10,6 +11,8 @@ namespace BetaCinema.Services.Interfaces
         ResponseObject<DataResponseFood> UpdateFood(int id, Request_UpdateFood rq);
 
         ResponseObject<DataResponseFood> DeleteFood(int id);
+
+        ResponseObject<DataResponseBestSellingFood> Get_BestSaller();
 
     }
 }
