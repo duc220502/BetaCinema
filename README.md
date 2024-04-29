@@ -1,4 +1,4 @@
--Chức năng đăng ký, gửi mã hoặc link xác nhận về email, xác thực đăng ký tài khoản\n\n
+-Chức năng đăng ký, gửi mã hoặc link xác nhận về email, xác thực đăng ký tài khoản<br>
 -Chức năng đăng nhập, sử dụng phương thức xác thực là JwtBearer
 -Chức năng đổi mật khẩu: người đổi mật khẩu phải là người đang trong phiên đăng nhập, chứ không được truyền vào userid trong controller
 -Chức năng quên mật khẩu - gửi mã xác nhận về email, chức năng tạo mật khẩu mới
