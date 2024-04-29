@@ -1,15 +1,15 @@
 -Chức năng đăng ký, gửi mã hoặc link xác nhận về email, xác thực đăng ký tài khoản<br>
--Chức năng đăng nhập, sử dụng phương thức xác thực là JwtBearer
--Chức năng đổi mật khẩu: người đổi mật khẩu phải là người đang trong phiên đăng nhập, chứ không được truyền vào userid trong controller
--Chức năng quên mật khẩu - gửi mã xác nhận về email, chức năng tạo mật khẩu mới
--Hiển thị các bộ phim nổi bật(sắp xếp theo số lượng đặt vé)
--Thêm, sửa, xóa Cinema(Admin)
--Thêm, sửa, xóa Room(Admin)
--Thêm, sửa, xóa Seat(Admin)
--Thêm, sửa, xóa Food(Admin)
--Hiển thị phim theo rạp, phòng, trạng thái ghế trong phòng
--Thêm, sửa, xóa Movie
--Tạo bill,thanh toán vnpay
--"CRUD Schedule - kiểm tra và đảm bảo là trong một phòng không chiếu đồng thời 2 phim trong một khoảng thời gian giao nhau"
--Thống kê doanh số  theo khoảng thời gian(Admin)
--Thống kê đồ ăn bán chạy trong 7 ngày gần nhất(Admin)
+-Chức năng đăng nhập, sử dụng phương thức xác thực là JwtBearer<br>
+-Chức năng đổi mật khẩu: người đổi mật khẩu phải là người đang trong phiên đăng nhập, chứ không được truyền vào userid trong controller<br>
+-Chức năng quên mật khẩu - gửi mã xác nhận về email, chức năng tạo mật khẩu mới<br>
+-Hiển thị các bộ phim nổi bật(sắp xếp theo số lượng đặt vé)<br>
+-Thêm, sửa, xóa Cinema(Admin)<br>
+-Thêm, sửa, xóa Room(Admin)<br>
+-Thêm, sửa, xóa Seat(Admin)<br>
+-Thêm, sửa, xóa Food(Admin)<br>
+-Hiển thị phim theo rạp, phòng, trạng thái ghế trong phòng<br>
+-Thêm, sửa, xóa Movie<br>
+-Tạo bill,thanh toán vnpay<br>
+-"CRUD Schedule - kiểm tra và đảm bảo là trong một phòng không chiếu đồng thời 2 phim trong một khoảng thời gian giao nhau"<br>
+-Thống kê doanh số  theo khoảng thời gian(Admin)<br>
+-Thống kê đồ ăn bán chạy trong 7 ngày gần nhất(Admin)<br>
