@@ -168,6 +168,26 @@ namespace BetaCinema.Services.Implement
             return _responseObject.ResponseSuccess("Cập nhật thành công",_converter.EntityToDTO(movieCr));
         }
 
-       
+        public async Task<ResponseObject<List<DataResponseMovie>>> GetTopViewMovies(Pagination pagination)
+        {
+            var topMovies = _context.Movies
+                            .Select(movie => new
+                            {
+                                Movie = movie,
+                                TicketCount = _context.BillTickets
+                                    .Count(bt => _context.Tickets
+                                        .Any(t => t.Id == bt.TicketId &&
+                                                  _context.Schedules
+                                                      .Any(s => s.Id == t.ScheduleId && s.MovieId == movie.Id)))
+                            })
+                            .OrderByDescending(m => m.TicketCount)
+                            .Select(m => _converter.EntityToDTO(m.Movie));
+
+            var result = await Result(pagination, topMovies).ToListAsync();
+
+            return _reponseObjectListMovie.ResponseSuccess("Lấy danh sách phim có lượng xem cao nhất thành công", result);
+
+            throw new NotImplementedException();
+        }
     }
 }

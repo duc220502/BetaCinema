@@ -90,6 +90,14 @@ namespace BetaCinema.Controllers
 
             return Ok(result);
         }
+        [HttpGet("getlisttopmovie")]
+        public async Task<IActionResult> GetListTopMovie([FromQuery] Pagination pagination)
+        {
+            var result = await _iMoviveService.GetTopViewMovies(pagination);
+            if (result.status != StatusCodes.Status200OK)
+                return StatusCode(result.status, new { message = result.Message });
 
+            return Ok(result);
+        }
     }
 }

@@ -15,5 +15,7 @@ namespace BetaCinema.Services.Interface
         Task<ResponseObject<DataResponseMovie>> DetailMovie(int id);
 
         Task<ResponseObject<List<DataResponseMovie>>> ListMoviesOfCinemas(Pagination pagination,int cinemaId);
+
+        Task<ResponseObject<List<DataResponseMovie>>> GetTopViewMovies(Pagination pagination);
     }
 }

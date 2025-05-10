@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|d:\\duccode\\l\u1EADp tr\u00ECnh .net\\onjob\\betacinema\\betacinema\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|solutionrelative:controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|d:\\duccode\\l\u1EADp tr\u00ECnh .net\\onjob\\betacinema\\betacinema\\services\\implement\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|solutionrelative:services\\implement\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|d:\\duccode\\l\u1EADp tr\u00ECnh .net\\onjob\\betacinema\\betacinema\\services\\implement\\cinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|solutionrelative:services\\implement\\cinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|d:\\duccode\\l\u1EADp tr\u00ECnh .net\\onjob\\betacinema\\betacinema\\services\\interface\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|solutionrelative:services\\interface\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|d:\\duccode\\l\u1EADp tr\u00ECnh .net\\onjob\\betacinema\\betacinema\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1903BDE5-7B64-4118-8CBC-8D11A90E96DD}|BetaCinema.csproj|solutionrelative:controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +62,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MovieController.cs",
+              "ToolTip": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "Controllers\\MovieController.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAUwF8AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:09:56.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieService.cs",
+              "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\MovieService.cs",
+              "RelativeDocumentMoniker": "Services\\Implement\\MovieService.cs",
+              "ToolTip": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\MovieService.cs",
+              "RelativeToolTip": "Services\\Implement\\MovieService.cs",
+              "ViewState": "AQIAAKIAAAAAAAAAAAAgwL8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:08:06.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CinemaService.cs",
+              "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\CinemaService.cs",
+              "RelativeDocumentMoniker": "Services\\Implement\\CinemaService.cs",
+              "ToolTip": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\CinemaService.cs",
+              "RelativeToolTip": "Services\\Implement\\CinemaService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:05:19.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMovieService.cs",
+              "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Interface\\IMovieService.cs",
+              "RelativeDocumentMoniker": "Services\\Interface\\IMovieService.cs",
+              "ToolTip": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Interface\\IMovieService.cs",
+              "RelativeToolTip": "Services\\Interface\\IMovieService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:03:58.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\Implement\\TokenService.cs",
@@ -54,12 +122,11 @@
               "RelativeToolTip": "Services\\Implement\\TokenService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T11:41:20.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T11:41:20.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ITicketService.cs",
               "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Interface\\ITicketService.cs",
               "RelativeDocumentMoniker": "Services\\Interface\\ITicketService.cs",
@@ -67,12 +134,11 @@
               "RelativeToolTip": "Services\\Interface\\ITicketService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T11:29:53.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T11:29:53.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TicketService.cs",
               "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Services\\Implement\\TicketService.cs",
               "RelativeDocumentMoniker": "Services\\Implement\\TicketService.cs",
@@ -80,25 +146,24 @@
               "RelativeToolTip": "Services\\Implement\\TicketService.cs",
               "ViewState": "AQIAAGMAAAAAAAAAAAAcwH0AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T11:29:48.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T11:29:48.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "TicketController.cs",
               "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "Controllers\\TicketController.cs",
               "ToolTip": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Controllers\\TicketController.cs",
               "RelativeToolTip": "Controllers\\TicketController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAA5AAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAkwFMAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T11:29:32.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Duccode\\L\u1EADp tr\u00ECnh .net\\ONJOB\\BetaCinema\\BetaCinema\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -106,8 +171,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAuwGEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T14:47:04.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T14:47:04.224Z"
             }
           ]
         },

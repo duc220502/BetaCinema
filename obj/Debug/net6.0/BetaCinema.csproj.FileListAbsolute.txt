@@ -88,3 +88,4 @@ D:\Duccode\Lập trình .net\ONJOB\BetaCinema\BetaCinema\bin\Debug\net6.0\Micros
 D:\Duccode\Lập trình .net\ONJOB\BetaCinema\BetaCinema\bin\Debug\net6.0\Scrutor.dll
 D:\Duccode\Lập trình .net\ONJOB\BetaCinema\BetaCinema\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 D:\Duccode\Lập trình .net\ONJOB\BetaCinema\BetaCinema\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\Duccode\Lập trình .net\ONJOB\BetaCinema\BetaCinema\obj\Debug\net6.0\BetaCinema.sourcelink.json
