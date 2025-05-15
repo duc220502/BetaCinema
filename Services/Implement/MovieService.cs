@@ -10,6 +10,7 @@ using Microsoft.VisualBasic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 namespace BetaCinema.Services.Implement
 {
@@ -186,8 +187,23 @@ namespace BetaCinema.Services.Implement
             var result = await Result(pagination, topMovies).ToListAsync();
 
             return _reponseObjectListMovie.ResponseSuccess("Lấy danh sách phim có lượng xem cao nhất thành công", result);
+        }
 
-            throw new NotImplementedException();
+        public async Task<ResponseObject<List<DataResponseMovie>>> SearchMovie(string nameMovie ,Pagination pagination)
+        {
+            if(nameMovie == null)
+                return _reponseObjectListMovie.ResponseError(StatusCodes.Status400BadRequest, "Vui lòng điền thông tin", null);
+
+            var movies = _context.Movies
+                                .Include(m => m.Rate)
+                                .Include(m => m.MovieType)
+                                .Where(m => m.Name.ToLower().Contains(nameMovie.ToLower()))
+                                .Select(m => _converter.EntityToDTO(m));
+
+            var result = await Result(pagination, movies).ToListAsync();
+
+            return _reponseObjectListMovie.ResponseSuccess("Tim kiếm theo tên thành công", result);
+
         }
     }
 }

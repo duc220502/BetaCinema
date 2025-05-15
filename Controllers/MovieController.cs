@@ -99,5 +99,16 @@ namespace BetaCinema.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("getlistsearchmoviebynames")]
+        public async Task<IActionResult> GetSearchListMovieByName([FromQuery] Pagination pagination, [FromQuery] string name)
+        {
+            var result = await _iMoviveService.SearchMovie(name , pagination);
+            if (result.status != StatusCodes.Status200OK)
+                return StatusCode(result.status, new { message = result.Message });
+
+            return Ok(result);
+        }
+
     }
 }
