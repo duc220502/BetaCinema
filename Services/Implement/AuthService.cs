@@ -46,7 +46,9 @@ namespace BetaCinema.Services.Implement
             if (userCr == null)
                 return _responseObjectToken.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản không tồn tại", null);
 
-            if (userCr.Password != rq.Password)
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(rq.Password, userCr.Password);
+
+            if (!isPasswordValid)
                 return _responseObjectToken.ResponseError(StatusCodes.Status400BadRequest, "Mật khẩu không đúng", null);
 
             if (!userCr.IsActive)
@@ -90,14 +92,17 @@ namespace BetaCinema.Services.Implement
 
             if (checkSendMail)
             {
+
+                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(rq.Password);
                 var newUser = new User()
                 {
+                    
                     UserName = rq.UserName,
                     FullName = rq.FullName,
                     Email = rq.Email,
                     NumberPhone = rq.NumberPhone,
                     Point = 0,
-                    Password = rq.Password,
+                    Password = hashedPassword,
                     IsActive = false,
                     RankCustomerId = 1,
                     RoleId = 1,

@@ -1,4 +1,5 @@
-﻿using BetaCinema.Handle;
+﻿using BetaCinema.Entities;
+using BetaCinema.Handle;
 using BetaCinema.PayLoads.Convertest;
 using BetaCinema.PayLoads.DataRequests;
 using BetaCinema.PayLoads.DataResponses;
@@ -33,13 +34,16 @@ namespace BetaCinema.Services.Implement
             if (!userCr.IsActive)
                 return _response.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản chưa được kích hoạt", null);
 
-            if (userCr.Password != rq.OldPass)
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(rq.OldPass, userCr.Password);
+
+            if (!isPasswordValid)
 
                 return _response.ResponseError(StatusCodes.Status400BadRequest, "Mật khẩu không chính xác", null);
 
             if (rq.OldPass == rq.NewPass)
 
                 return _response.ResponseError(StatusCodes.Status400BadRequest, "Trùng mật khẩu cũ", null);
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(rq.NewPass);
 
             userCr.Password = rq.NewPass;
             _context.Users.Update(userCr);
@@ -61,11 +65,15 @@ namespace BetaCinema.Services.Implement
             if (userCr == null)
                 return _response.ResponseError(StatusCodes.Status400BadRequest, "User không tồn tại", null);
 
-            if (userCr.Password == newPassword)
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(newPassword, userCr.Password);
+
+            if (isPasswordValid)
 
                 return _response.ResponseError(StatusCodes.Status400BadRequest, "Trùng mật khẩu cũ", null);
 
-            userCr.Password = newPassword;
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
+
+            userCr.Password = hashedPassword;
             _context.Users.Update(userCr);
 
             await _context.SaveChangesAsync();
