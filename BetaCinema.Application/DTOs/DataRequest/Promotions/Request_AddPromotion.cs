@@ -1,0 +1,27 @@
+﻿using BetaCinema.Domain.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BetaCinema.Application.DTOs.DataRequest.Promotions
+{
+    public class Request_AddPromotion
+    {
+        public string Name { get; set; } = default!;
+        public string? Description { get; set; }
+        public PromotionScope Scope { get; set; }
+        public DiscountType DiscountType { get; set; }
+        public decimal DiscountValue { get; set; }
+
+        public decimal? MinBillValue { get; set; }
+
+        public decimal? MaxDiscountValue { get; set; }
+
+        public int UsageLimit { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime? EndTime { get; set; }
+        public int? RankCustomerId { get; set; }
+    }
+}

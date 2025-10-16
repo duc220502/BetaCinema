@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>CẢNH BÁO BẢO MẬT HỆ THỐNG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .container {
+            border: 3px solid #ff0000;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #ff0000;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CẢNH BÁO BẢO MẬT KHẨN CẤP</h1>
+        <p>Hệ thống đã phát hiện một yêu cầu IPN đáng ngờ. Yêu cầu này đã vượt qua các bước kiểm tra chữ ký và đối soát ban đầu, nhưng đã **thất bại** ở bước xác minh ngược (QueryDR) với cổng thanh toán.</p>
+        <p><strong>Đây có thể là dấu hiệu của một cuộc tấn công giả mạo tinh vi.</strong> Yêu cầu điều tra ngay lập tức.</p>
+
+        <h3>Thông tin Chi tiết Giao dịch Đáng ngờ</h3>
+        <table>
+            <tr>
+                <th>Thời gian Phát hiện</th>
+                <td>@Model.Alertime.ToString("dd/MM/yyyy HH:mm:ss") UTC</td>
+            </tr>
+            <tr>
+                <th>ID Hóa đơn (Nội bộ)</th>
+                <td><code>@Model.BillId</code></td>
+            </tr>
+            <tr>
+                <th>Mã Giao dịch (Nội bộ)</th>
+                <td><code>@Model.TradingCode</code></td>
+            </tr>
+            <tr>
+                <th>Mã Giao dịch (Cổng TT)</th>
+                <td><code>@Model.GatewayTransactionId</code></td>
+            </tr>
+            <tr>
+                <th>Số tiền</th>
+                <td><strong>@Model.Amount.ToString("N0") VNĐ</strong></td>
+            </tr>
+        </table>
+        <hr>
+        <p><strong>Hành động đề xuất:</strong></p>
+        <ol>
+            <li><strong>KHÔNG</strong> thực hiện bất kỳ hành động nào trên hóa đơn này (không giao vé, không hoàn tiền).</li>
+            <li>Kiểm tra log hệ thống để xem chi tiết request IPN.</li>
+            <li>Đăng nhập vào trang quản trị của cổng thanh toán để kiểm tra xem giao dịch này có thực sự tồn tại và thành công hay không.</li>
+            <li>Xem xét việc kiểm tra lại `HashSecret` nếu nghi ngờ bị lộ.</li>
+        </ol>
+    </div>
+</body>
+</html>

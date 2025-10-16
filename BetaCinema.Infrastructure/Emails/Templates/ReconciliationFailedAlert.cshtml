@@ -1,0 +1,94 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cảnh báo Lỗi Đối soát Thanh toán</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .container {
+            border: 2px solid #d9534f;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CẢNH BÁO BẢO MẬT/TÀI CHÍNH NGHIÊM TRỌNG</h1>
+        <p>Hệ thống đã phát hiện một giao dịch thanh toán thành công từ cổng thanh toán, nhưng số tiền không khớp với hóa đơn trong database. Yêu cầu xử lý thủ công khẩn cấp.</p>
+
+        <h3>Thông tin Chi tiết</h3>
+        <table>
+            <tr>
+                <th>Thời gian Phát hiện</th>
+                <td>@Model.AlertTime.ToString("dd/MM/yyyy HH:mm:ss") UTC</td>
+            </tr>
+            <tr>
+                <th>ID Hóa đơn (Nội bộ)</th>
+                <td><code>@Model.BillId</code></td>
+            </tr>
+            <tr>
+                <th>Mã Giao dịch (Nội bộ)</th>
+                <td><code>@Model.TradingCode</code></td>
+            </tr>
+            <tr>
+                <th>Mã Giao dịch (Cổng TT)</th>
+                <td><code>@Model.PaymentGatewayTransactionId</code></td>
+            </tr>
+            <tr>
+                <th>Số tiền trong Database</th>
+                <td><strong>@Model.DbAmount.ToString("N0") VNĐ</strong></td>
+            </tr>
+            <tr>
+                <th>Số tiền Cổng TT báo về</th>
+                <td style="color: red;"><strong>@Model.GatewayAmount.ToString("N0") VNĐ</strong></td>
+            </tr>
+        </table>
+        <hr>
+        <p><strong>Hành động đề xuất:</strong></p>
+        <ol>
+            <li>Đăng nhập vào trang quản trị của cổng thanh toán.</li>
+            <li>Dùng "Mã Giao dịch (Cổng TT)" để tìm lại giao dịch gốc.</li>
+            <li>Kiểm tra số tiền thực tế đã được thanh toán.</li>
+            <li>Thực hiện **HOÀN TIỀN THỦ CÔNG (MANUAL REFUND)** cho khách hàng.</li>
+            <li>Xem trạng thái hóa đơn trong hệ thống ".</li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿using BetaCinema.Application.Interfaces.Auths;
+using BetaCinema.Domain.Interfaces;
+using BetaCinema.Infrastructure.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BetaCinema.Infrastructure.Extensions
+{
+    public static class JWTServiceExtensions
+    {
+        public static IServiceCollection AddJWTAuthentication(this IServiceCollection services,IConfiguration config)
+        {
+            var jwtSection = config.GetSection("JwtOptions");
+            services.Configure<JWTOptions>(jwtSection);
+
+            var jwtOptions = jwtSection.Get<JWTOptions>();
+            var key = Encoding.UTF8.GetBytes(jwtOptions?.SecretKey ?? "");
+
+
+            services.AddAuthentication()
+
+              .AddJwtBearer("Bearer", opt =>
+              {
+                  opt.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      ValidateIssuer = true,
+                      ValidIssuer = jwtOptions?.Issuer,
+                      ValidateAudience = true,
+                      ValidAudience = jwtOptions?.Audience,
+                      ValidateIssuerSigningKey = true,
+                      IssuerSigningKey = new SymmetricSecurityKey(key),
+                      ValidateLifetime = true,
+                      ClockSkew = TimeSpan.Zero
+                  };
+              });
+
+            services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
+            return services;
+        }
+    }
+}
