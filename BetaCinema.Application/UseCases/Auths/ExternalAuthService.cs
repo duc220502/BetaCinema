@@ -24,15 +24,49 @@ namespace BetaCinema.Application.UseCases.Auths
 
             var ext = _normalizer.Normalize(externalPrincipal, provider);
 
-            if (provider.Equals("Google", StringComparison.OrdinalIgnoreCase))
+            switch (provider.ToLowerInvariant())
             {
-                var allowedDomain = _configuration["Authentication:Providers:Google:HostedDomain"];
-                if (!string.IsNullOrEmpty(allowedDomain) &&
-                   !ext.Email.EndsWith($"@{allowedDomain}", StringComparison.OrdinalIgnoreCase))
-                    throw new UnauthorizedAccessException("Email domain not allowed");
+                case "google":
+                    var allowedDomain = _configuration["Authentication:Providers:google:HostedDomain"];
+                    if (!string.IsNullOrEmpty(allowedDomain) &&
+                        !ext.Email.EndsWith($"@{allowedDomain}", StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new UnauthorizedAccessException($"Only {allowedDomain} emails are allowed");
+                    }
+
+                    if (string.IsNullOrEmpty(ext.Email))
+                    {
+                        throw new UnauthorizedAccessException("Email is required from Google");
+                    }
+                    break;
+
+                case "facebook":
+                    // Facebook có thể không có email
+                    //if (string.IsNullOrEmpty(ext.Email))
+                    //{
+                    //    // Option 1: Reject user không có email
+                    //    //throw new UnauthorizedAccessException("Email permission is required");
+
+                    //    // Option 2: Tạo email giả (không recommend)
+                    //    // ext.Email = $"{ext.ProviderKey}@facebook.temp";
+
+                    //    // Option 3: Cho phép null, xử lý sau
+                    //    // (cần sửa User entity cho phép Email nullable)
+
+
+                    //    //ext.Email = "";
+                    //}
+                    break;
+
+                default:
+                    // Provider khác (GitHub, Twitter, etc.)
+                    if (string.IsNullOrEmpty(ext.Email))
+                    {
+                        throw new UnauthorizedAccessException($"Email is required from {provider}");
+                    }
+                    break;
             }
 
-            // Map/tạo user nội bộ + liên kết ExternalLogins(provider, key)
             var user = await _userService.FindOrCreateExternalUserAsync(ext.Provider, ext.ProviderKey, ext.Email, ext.Name);
             return user;
         }

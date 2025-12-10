@@ -9,6 +9,6 @@ namespace BetaCinema.Application.DTOs.DataResponse
     public class DataResponseUserStatus
     {
         public int Id { get; set; }
-        public string Name { get; set; } = default!;
+        public string StatusName { get; set; } = default!;
     }
 }

@@ -24,7 +24,7 @@ namespace BetaCinema.Persistence.Repository
 
         public async Task<User?> GetByEmailOrNumberPhoneAsync(string account, CancellationToken ct = default)
 
-          => await _context.Users.FirstOrDefaultAsync(x => x.IsActive && x.Email == account || x.NumberPhone == account, ct);
+          => await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(x => x.UserStatusId == (int) Domain.Enums.UserStatus.Active && ( x.Email == account || x.NumberPhone == account), ct);
        
         public async Task<User?> GetByIdWithDetailsAsync(Guid id, CancellationToken ct = default)
 
@@ -49,5 +49,9 @@ namespace BetaCinema.Persistence.Repository
         public async Task<bool> IsNumberPhoneUniqueAsync(string? numberPhone, Guid currentUserId)
 
           => !await _context.Users.AnyAsync(u => u.NumberPhone == numberPhone && u.Id != currentUserId);
+
+        public async Task<User?> GetByIdWithRoleAsync(Guid id, CancellationToken ct = default)
+
+        => await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Id == id, ct);
     }
 }

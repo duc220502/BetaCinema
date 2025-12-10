@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -13,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Security;
+using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +24,12 @@ namespace BetaCinema.Infrastructure.Extensions
     public static class ExternalProviderSeviceExtensions
     {
 
-        public static IServiceCollection AddExternalProviders(this IServiceCollection services, IConfiguration cfg)
+        public static AuthenticationBuilder AddExternalProviders(this AuthenticationBuilder authBuilder, IConfiguration cfg)
         {
             var providers = cfg.GetSection("Authentication:Providers");
-            if (!providers.Exists()) return services;
+            if (!providers.Exists()) return authBuilder;
 
-            var auth = services.AddAuthentication();
+            
 
             foreach (var p in providers.GetChildren())
             {
@@ -37,13 +39,13 @@ namespace BetaCinema.Infrastructure.Extensions
                 switch (type)
                 {
                     case "openidconnect":
-                        
 
-                        auth.AddOpenIdConnect(name, o =>
+
+                        authBuilder.AddOpenIdConnect(name, o =>
                         {
                             o.Authority = "https://accounts.google.com";
-                            o.MetadataAddress = "https://accounts.google.com/.well-known/openid-configuration";
 
+                           
                             o.ClientId = p["ClientId"]!;
                             o.ClientSecret = p["ClientSecret"]!;
                             o.CallbackPath = p["CallbackPath"] ?? "/oauth2/callback/google";
@@ -82,39 +84,101 @@ namespace BetaCinema.Infrastructure.Extensions
 
 
                     case "oauth2":
-                        auth.AddOAuth(name, o =>
+
+                        if (name == "facebook")
                         {
-                            o.ClientId = p["ClientId"]!;
-                            o.ClientSecret = p["ClientSecret"]!;
-                            o.CallbackPath = p["CallbackPath"]!;
-                            o.AuthorizationEndpoint = p["AuthorizationEndpoint"]!;
-                            o.TokenEndpoint = p["TokenEndpoint"]!;
-                            o.UserInformationEndpoint = p["UserInformationEndpoint"]!;
-                            foreach (var s in p.GetSection("Scopes").Get<string[]>() ?? [])
-                                o.Scope.Add(s);
+                            Console.WriteLine($"Adding Facebook OAuth for {name}");
+                            authBuilder.AddFacebook(name, o =>  
+                            {
+                                o.AppId = p["ClientId"]!;
+                                o.AppSecret = p["ClientSecret"]!;
+                                o.CallbackPath = new PathString(p["CallbackPath"] ?? $"/oauth2/callback/{name}");
+
+                                foreach (var s in p.GetSection("Scopes").Get<string[]>() ?? [])
+                                    o.Scope.Add(s);
+
+                                o.SaveTokens = true;
+                                o.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+                                var claims = p.GetSection("ClaimMap").Get<Dictionary<string, string>>() ?? new();
+
+                                o.Fields.Clear(); 
+                                o.Fields.Add("id");
+                                o.Fields.Add("name");
+                                o.Fields.Add("email");
+                                o.Fields.Add("picture");
+
+                                // Map claims
+                                foreach (var kv in claims)
+                                    o.ClaimActions.MapJsonKey(kv.Key, kv.Value);
+
+                                o.Events = new OAuthEvents
+                                {
+                                    OnCreatingTicket = ctx =>
+                                    {
+                                        Console.WriteLine("[Facebook] OnCreatingTicket");
+
+                                        
+                                        var json = ctx.User.GetRawText();
+                                        Console.WriteLine($"Raw Facebook JSON: {json}");
+
+                                        
+                                        Console.WriteLine("Claims:");
+                                        foreach (var claim in ctx.Principal?.Claims ?? Enumerable.Empty<Claim>())
+                                        {
+                                            Console.WriteLine($"    {claim.Type}: {claim.Value}");
+                                        }
+
+                                        return Task.CompletedTask;
+                                    },
+                                    OnRemoteFailure = ctx =>
+                                    {
+                                        Console.WriteLine($"[Facebook] RemoteFailure: {ctx.Failure}");
+                                        ctx.Response.Redirect("/");
+                                        ctx.HandleResponse();
+                                        return Task.CompletedTask;
+                                    }
+                                };
+                            });
+                        }
+                        else
+                        {
+                            authBuilder.AddOAuth(name, o =>
+                            {
+                                o.ClientId = p["ClientId"]!;
+                                o.ClientSecret = p["ClientSecret"]!;
+                                o.CallbackPath = p["CallbackPath"]!;
+
+                                o.AuthorizationEndpoint = p["AuthorizationEndpoint"]!;
+                                o.TokenEndpoint = p["TokenEndpoint"]!;
+                                o.UserInformationEndpoint = p["UserInformationEndpoint"]!;
+
+                                foreach (var s in p.GetSection("Scopes").Get<string[]>() ?? [])
+                                    o.Scope.Add(s);
+
+
+                                var claims = p.GetSection("ClaimMap").Get<Dictionary<string, string>>() ?? new();
+
+                                o.SaveTokens = true;
+                                o.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+                                foreach (var kv in claims)
+                                    o.ClaimActions.MapJsonKey(kv.Key, kv.Value);
+
+
+
+                                o.Events = new OAuthEvents
+                                {
+                                    OnCreatingTicket = ctx =>
+                                    {
+                                        Console.WriteLine($"[Facebook] Ticket created");
+                                        return Task.CompletedTask;
+                                    }
+                                };
+                            });
+                        }
 
                             
-                            var claims = p.GetSection("ClaimMap").Get<Dictionary<string, string>>() ?? new();
-                            foreach (var kv in claims)
-                                o.ClaimActions.MapJsonKey(kv.Key, kv.Value);
-
-                            o.Events = new OAuthEvents
-                            {
-                                OnCreatingTicket = async ctx =>
-                                {
-                                    if (!string.IsNullOrEmpty(ctx.Options.UserInformationEndpoint))
-                                    {
-                                        var req = new HttpRequestMessage(HttpMethod.Get, ctx.Options.UserInformationEndpoint);
-                                        req.Headers.Authorization =
-                                            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ctx.AccessToken);
-                                        var resp = await ctx.Backchannel.SendAsync(req);
-                                        resp.EnsureSuccessStatusCode();
-                                        using var doc = await System.Text.Json.JsonDocument.ParseAsync(await resp.Content.ReadAsStreamAsync());
-                                        ctx.RunClaimActions(doc.RootElement);
-                                    }
-                                }
-                            };
-                        });
                         break;
 
                     default:
@@ -122,7 +186,7 @@ namespace BetaCinema.Infrastructure.Extensions
                 }
             }
 
-            return services;
+            return authBuilder;
         }
     }
 }

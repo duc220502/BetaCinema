@@ -11,7 +11,7 @@ namespace BetaCinema.Application.DTOs.DataResponse
         public int Id { get; set; }
         public int MinimumPoint { get; set; }
 
-        public string Name { get; set; } = default!;
+        public string RankName { get; set; } = default!;
 
         public string Description { get; set; } = default!;
     }

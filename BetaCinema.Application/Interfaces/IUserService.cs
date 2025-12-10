@@ -20,6 +20,8 @@ namespace BetaCinema.Application.Interfaces
 
         Task<ResponseObject<IEnumerable<DataResponseUser>>> GetUsers(Pagination pagination);
 
+        Task<ResponseObject<DataResponseUser>> GetMyProfile();
+
         Task<ResponseObject<DataResponseUser>> UpdateMyProfile(Request_UpdateMyProfile rq);
 
         Task<ResponseObject<DataResponseUser>> UpdateUserByAdmin(Guid id, Request_UpdateUserByAdmin rq);

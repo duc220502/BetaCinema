@@ -39,6 +39,15 @@ namespace BetaCinema.API.Controllers
             return Ok(response);
         }
 
+        [HttpGet("me")]
+        [Authorize]
+        public async Task<IActionResult> GetMyProfile()
+        {
+            var response = await _userService.GetMyProfile();
+            return Ok(response);
+        }
+
+
         [HttpPatch("me")]
         [Authorize]
         public async Task<IActionResult> UpdateMyProfile([FromBody] Request_UpdateMyProfile rq)

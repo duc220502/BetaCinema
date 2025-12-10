@@ -109,6 +109,7 @@ namespace BetaCinema.Application.UseCases.Users
 
         }
 
+
         public async Task<ResponseObject<DataResponseUser>> UpdateMyProfile(Request_UpdateMyProfile rq)
         {
             var userCr = await GetAndValidateCurrentUserAsync();
@@ -207,15 +208,23 @@ namespace BetaCinema.Application.UseCases.Users
                 return existingLink.User;
 
             var user = await _userRepository.GetByEmailOrNumberPhoneAsync(email);
-
+            bool isNewUser = false;
             if (user == null)
             {
                 user = new User
                 {
                     Email = email,
-                    UserName = name
+                    UserName = name ?? email.Split('@')[0], 
+                    FullName = name ?? " User",
+                    NumberPhone = "", 
+                    Password = "",
+                    Point = 0,
+                    RankCustomerId = (int)UserRank.Standard, 
+                    RoleId = (int)UserRole.Member, 
+                    UserStatusId = (int)Domain.Enums.UserStatus.Active
                 };
                 _userRepository.Add(user);
+                isNewUser = true;
             }
 
             var link = new ExternalLogin
@@ -228,7 +237,23 @@ namespace BetaCinema.Application.UseCases.Users
 
            await  _unitOfWork.SaveChangesAsync();
 
-           return user;
+            if (isNewUser)
+            {
+                user = await _userRepository.GetByIdWithRoleAsync(user.Id, ct); 
+            }
+
+            return user!;
+
+        }
+
+        public async Task<ResponseObject<DataResponseUser>> GetMyProfile()
+        {
+            var userCr = await GetAndValidateCurrentUserAsync();
+
+            var dto = _mapper.Map<DataResponseUser>(userCr);
+
+            return ResponseObject<DataResponseUser>.ResponseSuccess("Lấy thông tin user thành công", dto);
+
 
         }
     }

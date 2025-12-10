@@ -20,6 +20,9 @@ namespace BetaCinema.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCorsService();
+
+            builder.Services.AddCustomApiBehavior();
             // Add services to the container.
 
             builder.Services.AddDatabaseAndRepositories(builder.Configuration);
@@ -44,13 +47,16 @@ namespace BetaCinema.API
             builder.Services.AddApplicationServices(builder.Configuration);
             builder.Services.AddFluentValidation();
             builder.Services.AddInfrastructureServices(builder.Configuration);
+            builder.Services.AddRedis(builder.Configuration);
+           ;
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddBffCookie(builder.Configuration);
-            builder.Services.AddExternalProviders(builder.Configuration);
-            builder.Services.AddJWTAuthentication(builder.Configuration);
+            builder.Services
+             .AddBffCookie(builder.Configuration)           // Gọi AddAuthentication
+             .AddJWTAuthentication(builder.Configuration)   // Nhận AuthenticationBuilder
+             .AddExternalProviders(builder.Configuration);
             builder.Services.AddCustomAuthorization();
             var app = builder.Build();
 
@@ -58,7 +64,7 @@ namespace BetaCinema.API
 
             app.Services.AddHangfireJobs();
 
-           // app.UseCustomMiddlewares();
+            app.UseCustomMiddlewares();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

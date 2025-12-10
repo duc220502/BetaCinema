@@ -19,6 +19,8 @@ namespace BetaCinema.Application.Mapping
 
             CreateMap<UserStatus, DataResponseUserStatus>();
 
+            CreateMap<RankCustomer , DataResponseRankCustomer>();
+
             CreateMap<User, DataResponseUser>();
                
 

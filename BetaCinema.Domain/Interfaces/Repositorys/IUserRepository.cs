@@ -25,5 +25,7 @@ namespace BetaCinema.Domain.Interfaces.Repositorys
         Task<bool> IsUserNameUniqueAsync(string? userName, Guid currentUserId);
         Task<bool> IsNumberPhoneUniqueAsync(string? numberPhone, Guid currentUserId);
 
+        Task<User?> GetByIdWithRoleAsync(Guid id, CancellationToken ct = default);
+
     }
 }

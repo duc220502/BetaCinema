@@ -93,12 +93,13 @@ namespace BetaCinema.Application.UseCases.Users
 
             _confirmEmailRepository.Add(confirmEmail);
 
+            await _unitOfWork.SaveChangesAsync();
+
+
             var createdUser = await _userRepository.GetByIdWithDetailsAsync(newUser.Id)
                 ?? throw new InvalidOperationException("Không thể tải lại thông tin người dùng vừa tạo.");
             
             var userDto = _mapper.Map<DataResponseUser>(createdUser);
-
-            await _unitOfWork.SaveChangesAsync();
 
             var emailBody = strategy.CreateEmailBody(confirmEmail.ConfirmCode, newUser.Email);
             await _emailService.SendEmailAsync(newUser.Email, "Yêu cầu xác thực đăng kí tài khoản", emailBody);

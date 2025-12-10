@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,9 +13,9 @@ namespace BetaCinema.Infrastructure.Extensions
 {
     public static class BffCookieExtension
     {
-        public static IServiceCollection AddBffCookie(this IServiceCollection services, IConfiguration cfg)
+        public static AuthenticationBuilder AddBffCookie(this IServiceCollection services, IConfiguration cfg)
         {
-            services.AddAuthentication(options =>
+            var authBuilder =  services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -32,7 +33,7 @@ namespace BetaCinema.Infrastructure.Extensions
                     o.ExpireTimeSpan = TimeSpan.FromHours(8);
                 });
 
-            return services;
+            return authBuilder;
         }
     }
 }

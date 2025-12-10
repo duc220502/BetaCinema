@@ -2,6 +2,7 @@
 using BetaCinema.Application.DTOs.DataRequest.Users;
 using BetaCinema.Application.DTOS.DataRequest.Users;
 using BetaCinema.Application.Enums;
+using BetaCinema.Application.Exceptions;
 using BetaCinema.Application.Interfaces;
 using BetaCinema.Application.Interfaces.Auths;
 using BetaCinema.Application.UseCases.Users;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 using System.Security.Claims;
 
 namespace BetaCinema.API.Controllers
@@ -33,13 +35,13 @@ namespace BetaCinema.API.Controllers
 
             var list = new[]
             {
-        new { Name = "OpenIdConnectHandler", Assembly = A(typeof(Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler)) },
-        new { Name = "JwtBearerHandler",     Assembly = A(typeof(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler)) },
-        new { Name = "IM.Protocols",         Assembly = A(typeof(Microsoft.IdentityModel.Protocols.IDocumentRetriever)) },
-        new { Name = "IM.Protocols.OIDC",    Assembly = A(typeof(Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfiguration)) },
-        new { Name = "IM.Tokens",            Assembly = A(typeof(Microsoft.IdentityModel.Tokens.SecurityKey)) },
-        new { Name = "System.IdentityModel", Assembly = A(typeof(System.IdentityModel.Tokens.Jwt.JwtSecurityToken)) },
-    };
+                new { Name = "OpenIdConnectHandler", Assembly = A(typeof(Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler)) },
+                new { Name = "JwtBearerHandler",     Assembly = A(typeof(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler)) },
+                new { Name = "IM.Protocols",         Assembly = A(typeof(Microsoft.IdentityModel.Protocols.IDocumentRetriever)) },
+                new { Name = "IM.Protocols.OIDC",    Assembly = A(typeof(Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfiguration)) },
+                new { Name = "IM.Tokens",            Assembly = A(typeof(Microsoft.IdentityModel.Tokens.SecurityKey)) },
+                new { Name = "System.IdentityModel", Assembly = A(typeof(System.IdentityModel.Tokens.Jwt.JwtSecurityToken)) },
+             };
 
             return Ok(list);
         }
@@ -50,12 +52,15 @@ namespace BetaCinema.API.Controllers
         [FromServices] IOptionsMonitor<OpenIdConnectOptions> mon,
         CancellationToken ct)
         {
-            var o = mon.Get(scheme); // "google"
-                                     // Cực quan trọng: dùng ConfigurationManager của chính OIDC
-            var cfgMgr = o.ConfigurationManager;
+            var o = mon.Get(scheme);
+            var cfgMgr = o.ConfigurationManager ?? throw new  NotFoundException("ConfigurationManager null");
+
             try
             {
-                var cfg = await cfgMgr.GetConfigurationAsync(ct);
+                // THÊM dòng này để force refresh
+                cfgMgr?.RequestRefresh();
+
+                var cfg = await cfgMgr!.GetConfigurationAsync(ct);
                 return Ok(new
                 {
                     scheme,
@@ -131,16 +136,30 @@ namespace BetaCinema.API.Controllers
         }
 
         [HttpGet("auth/{provider}/callback")]
-        public async Task<IActionResult> Callback([FromRoute] string provider, [FromQuery] string? returnUrl = "/", CancellationToken ct = default)
+        public async Task<IActionResult> Callback([FromRoute] string provider, CancellationToken ct = default)
         {
             Console.WriteLine(">>> ENTERED Callback");
 
-            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) returnUrl = "/";
             var auth = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            if (!auth.Succeeded || auth.Principal is null) return Unauthorized();
+            if (!auth.Succeeded || auth.Principal is null)
+                return Unauthorized();
 
-            await _externalAuthService.HandleCallbackAsync(provider, auth.Principal, ct);
-            return LocalRedirect(returnUrl);
+           
+            var returnUrl = auth.Properties?.Items["returnUrl"] ?? "/api/auth/dev/login-success";
+
+            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
+                returnUrl = "/api/auth/dev/login-success";
+
+            var user =  await _externalAuthService.HandleCallbackAsync(provider, auth.Principal, ct);
+
+
+            var token = await _tokenService.GenerateTokenAsync(user);
+
+            Console.WriteLine($">>> Redirecting to: {returnUrl}");
+
+            var separator = returnUrl.Contains('?') ? "&" : "?";
+
+            return LocalRedirect($"{returnUrl}{separator}token={token.AccessToken}");
         }
 
         [HttpPost("auth/login")]
@@ -156,15 +175,36 @@ namespace BetaCinema.API.Controllers
         [HttpGet("auth/dev/login-success")]
         public IActionResult DevLoginSuccess([FromQuery] string? token = null)
         {
+            // Debug: In tất cả claims
+            Console.WriteLine("=== All Claims ===");
+            foreach (var claim in User.Claims)
+            {
+                Console.WriteLine($"{claim.Type}: {claim.Value}");
+            }
+
             var info = new
             {
                 token,
                 user = new
                 {
-                    name = User.Identity?.Name,
-                    email = User.Claims.FirstOrDefault(c => c.Type == "email")?.Value
-                         ?? User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value,
-                    sub = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value
+                    // Thử nhiều cách lấy name
+                    name = User.Identity?.Name
+                        ?? User.FindFirst("name")?.Value
+                        ?? User.FindFirst(ClaimTypes.Name)?.Value
+                        ?? User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value,
+
+                    // Email
+                    email = User.FindFirst("email")?.Value
+                         ?? User.FindFirst(ClaimTypes.Email)?.Value
+                         ?? User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value,
+
+                    // Sub
+                    sub = User.FindFirst("sub")?.Value
+                       ?? User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                       ?? User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value,
+
+                    // Thêm để debug
+                    allClaims = User.Claims.Select(c => new { c.Type, c.Value }).ToList()
                 }
             };
             return Ok(info);
@@ -174,8 +214,8 @@ namespace BetaCinema.API.Controllers
         [HttpPost("users")]
         public async Task<IActionResult> Register([FromBody] Request_Register rq)
         {
-            var user = await _userRegistrationService.Register(rq,ConfirmationMethod.OTP);
-            return CreatedAtAction(nameof(UsersController.GetUserById), "Users", new { id = user?.Data?.Id }, user);
+            var response = await _userRegistrationService.Register(rq,ConfirmationMethod.OTP);
+            return StatusCode(StatusCodes.Status201Created, response);
         }
 
         [HttpPut("auth/email-verifications")]

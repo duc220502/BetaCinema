@@ -4,6 +4,7 @@ using BetaCinema.Application.DTOs.DataRequest.Movies;
 using BetaCinema.Application.DTOs.DataResponse;
 using BetaCinema.Application.Exceptions;
 using BetaCinema.Application.Interfaces;
+using BetaCinema.Application.Interfaces.Catching;
 using BetaCinema.Domain.Entities.Foods;
 using BetaCinema.Domain.Entities.ShowTimes;
 using BetaCinema.Domain.Interfaces.Repositorys;
@@ -17,11 +18,12 @@ using System.Xml.Linq;
 
 namespace BetaCinema.Application.UseCases
 {
-    public class MovieService(IMovieRepository movieRepository , IMapper mapper , IUnitOfWork unitOfWork) : IMovieService
+    public class MovieService(IMovieRepository movieRepository , IMapper mapper , IUnitOfWork unitOfWork , IAppCache cache) : IMovieService
     {
         private readonly   IMovieRepository _movieRepository = movieRepository;
         private readonly IMapper _mapper = mapper;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
+        private readonly IAppCache _cache = cache;
         public async Task<ResponseObject<DataResponseMovie>> AddMovie(Request_AddMovie rq)
         {
 
@@ -70,8 +72,18 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseMovie>> GetMovieById(Guid id)
         {
-            var result = await _movieRepository.GetByIdAsync(id) ?? throw new NotFoundException("Không tìm thấy Movie");
 
+
+            var result = await _cache.GetOrSetAsync(
+            CacheKeys.Movie(id),
+            async () =>
+            {
+                var entity = await _movieRepository.GetByIdAsync(id)
+                    ?? throw new NotFoundException("Không tìm thấy Movie");
+                return entity;
+            },
+            ttl: TimeSpan.FromMinutes(30)
+            );
             var dto = _mapper.Map<DataResponseMovie>(result);
 
             return ResponseObject<DataResponseMovie>.ResponseSuccess("Lấy thông tin Movie thành công", dto);

@@ -1,8 +1,10 @@
 ﻿using BetaCinema.Application.Interfaces;
 using BetaCinema.Application.Interfaces.Auths;
+using BetaCinema.Application.Interfaces.Catching;
 using BetaCinema.Application.Interfaces.PaymentStrategies;
 using BetaCinema.Application.Mapping;
 using BetaCinema.Infrastructure.Authentication;
+using BetaCinema.Infrastructure.Catching.Redis;
 using BetaCinema.Infrastructure.Configuration;
 using BetaCinema.Infrastructure.Emails;
 using BetaCinema.Infrastructure.Payments;
@@ -25,8 +27,6 @@ namespace BetaCinema.Infrastructure.Extensions
             services.AddHttpContextAccessor();
             services.AddScoped<ICurrentUserservice, CurrentUserService>();
             services.AddScoped<IPasswordSecurityService, BCryptSecuriryService>();
-            services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
-            services.AddScoped<ITokenValidator, JwtTokenValidator>();
             services.AddScoped<IEmailService, SmtpEmailService>();
             services.AddScoped<IConfirmationMethodStrategy, OtpConfirmationStrategy>();
             services.AddScoped<IConfirmationMethodStrategy, LinkConfirmationStrategy>();
@@ -39,7 +39,10 @@ namespace BetaCinema.Infrastructure.Extensions
             services.AddScoped<IPaymentStrategy , CashPaymentStrategy>();
             services.AddScoped<IPaymentStrategy,VnpayPaymentStrategy>();
             services.AddScoped<IPaymentStrategyFactory , PaymentStrategyFactory>();
-            services.AddScoped<IVnpayClient, VnpayClient>();    
+            services.AddScoped<IVnpayClient, VnpayClient>();
+
+
+            services.AddScoped<ISeatHoldService, SeatHoldService>();
 
             services.AddScoped<IRazorTemplateService, RazorTemplateService>();
             services.AddTransient<FinalJobFailureNotifierFilter>();

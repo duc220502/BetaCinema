@@ -26,6 +26,6 @@ namespace BetaCinema.Application.DTOs.DataResponse
         public bool IsActive { get; set; }
 
         public Guid MovieTypeId { get; set; }
-        public Guid RateId { get; set; }
+        public int RateId { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BetaCinema.Application.Interfaces.Auths;
 using BetaCinema.Domain.Interfaces;
 using BetaCinema.Infrastructure.Authentication;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,16 +16,14 @@ namespace BetaCinema.Infrastructure.Extensions
 {
     public static class JWTServiceExtensions
     {
-        public static IServiceCollection AddJWTAuthentication(this IServiceCollection services,IConfiguration config)
+        public static AuthenticationBuilder AddJWTAuthentication(this AuthenticationBuilder authBuilder, IConfiguration config)
         {
             var jwtSection = config.GetSection("JwtOptions");
-            services.Configure<JWTOptions>(jwtSection);
-
+            authBuilder.Services.Configure<JWTOptions>(jwtSection);
             var jwtOptions = jwtSection.Get<JWTOptions>();
             var key = Encoding.UTF8.GetBytes(jwtOptions?.SecretKey ?? "");
 
-
-            services.AddAuthentication()
+            authBuilder
 
               .AddJwtBearer("Bearer", opt =>
               {
@@ -41,8 +40,9 @@ namespace BetaCinema.Infrastructure.Extensions
                   };
               });
 
-            services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
-            return services;
+            authBuilder.Services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
+            authBuilder.Services.AddScoped<ITokenValidator, JwtTokenValidator>();
+            return authBuilder;
         }
     }
 }
