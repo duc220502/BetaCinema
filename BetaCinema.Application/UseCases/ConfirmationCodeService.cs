@@ -15,7 +15,7 @@ namespace BetaCinema.Application.UseCases
     {
         private readonly IEnumerable<IConfirmationMethodStrategy> _strategies = strategies;
 
-        public (ConfirmEmail confirmEmail, IConfirmationMethodStrategy strategy) CreateCode(Guid userId, ConfirmationMethod method, CodePurpose purpose)
+        public (ConfirmEmail confirmEmail, string token) CreateCode(Guid userId, ConfirmationMethod method, CodePurpose purpose)
         {
             var strategy = _strategies.FirstOrDefault(s => s.StrategyName.Equals(method.ToString(), StringComparison.OrdinalIgnoreCase))
             ?? throw new InvalidOperationException("Phương thức xác thực không được hỗ trợ.");
@@ -31,7 +31,7 @@ namespace BetaCinema.Application.UseCases
                 UserId = userId
             };
 
-            return (confirmEmail, strategy);
+            return (confirmEmail, token);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BetaCinema.Application.Common;
+using BetaCinema.Application.DTOs.Auth.External;
 using BetaCinema.Application.DTOs.DataRequest.Users;
 using BetaCinema.Application.DTOS.DataRequest.Users;
 using BetaCinema.Application.DTOS.DataResponse;
@@ -32,7 +33,7 @@ namespace BetaCinema.Application.Interfaces
 
         Task<User> GetAndValidateCurrentUserAsync();
 
-        Task<User> FindOrCreateExternalUserAsync(string provider,string providerKey,string email,string? name,CancellationToken ct = default);
+        Task<ExternalAuthResult> FindOrCreateExternalUserAsync(string provider,string providerKey,string email,string? name,CancellationToken ct = default);
 
     }
 }

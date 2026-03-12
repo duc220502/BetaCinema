@@ -16,8 +16,8 @@ namespace BetaCinema.Infrastructure.Payments
 
         public Task<PaymentConfirmationResult> ConfirmPaymentAsync(Dictionary<string, string> callbackData)
         {
-            var billId = Guid.Parse(callbackData.GetValueOrDefault("billId") ?? throw new NotFoundException("Không tìm thấy billid"));
-            var amount = decimal.Parse(callbackData.GetValueOrDefault("amount") ?? throw new NotFoundException("Không tìm thấy amount"));
+            var billId = Guid.Parse(callbackData.GetValueOrDefault("billId") ?? throw new NotFoundAppException("Không tìm thấy billid"));
+            var amount = decimal.Parse(callbackData.GetValueOrDefault("amount") ?? throw new NotFoundAppException("Không tìm thấy amount"));
 
             var result = new PaymentConfirmationResult
             {

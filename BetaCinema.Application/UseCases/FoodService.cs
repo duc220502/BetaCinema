@@ -43,7 +43,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseFood>> DeleteFood(Guid id)
         {
             var fooCr = await _foodRepository.GetFoodByIdAsync(id)
-             ?? throw new NotFoundException("Food không tồn tại.");
+             ?? throw new NotFoundAppException("Food không tồn tại.");
 
             fooCr.IsActive = false;
 
@@ -58,7 +58,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseFood>> GetFoodById(Guid id)
         {
-            var result = await _foodRepository.GetByIdAsync(id)??throw new NotFoundException("Không tìm thấy Food");
+            var result = await _foodRepository.GetByIdAsync(id)??throw new NotFoundAppException("Không tìm thấy Food");
 
             var dto = _mapper.Map<DataResponseFood>(result);
 
@@ -79,7 +79,7 @@ namespace BetaCinema.Application.UseCases
             var foodsFromDb = await _foodRepository.GetFoodsByIdsAsync(distinctFoodIds);
 
             if (foodsFromDb?.Count != distinctFoodIds.Count)
-                throw new NotFoundException($"Một hoặc nhiều món ăn không tồn tại.");
+                throw new NotFoundAppException($"Một hoặc nhiều món ăn không tồn tại.");
 
             var preparedFoods = new List<PreparedFoodDto>();
 
@@ -102,14 +102,14 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseFood>> UpdateFood(Guid id,Request_UpdateFood rq)
         {
             var foodCr = await _foodRepository.GetFoodByIdAsync(id)
-            ?? throw new NotFoundException($"Không tìm thấy food với ID: {id}");
+            ?? throw new NotFoundAppException($"Không tìm thấy food với ID: {id}");
 
             if (!string.IsNullOrEmpty(rq.Name) && rq.Name != foodCr.Name)
             {
 
                 var nameExists = await _foodRepository.IsFoodNameUniqueAsync(rq.Name, id);
                 if (!nameExists)
-                    throw new ConflictException($"Tên food '{rq.Name}' đã tồn tại.");
+                    throw new ConflictAppException($"Tên food '{rq.Name}' đã tồn tại.");
             }
 
             _mapper.Map(rq, foodCr);

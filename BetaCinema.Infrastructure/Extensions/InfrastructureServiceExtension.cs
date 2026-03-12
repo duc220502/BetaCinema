@@ -8,6 +8,7 @@ using BetaCinema.Infrastructure.Catching.Redis;
 using BetaCinema.Infrastructure.Configuration;
 using BetaCinema.Infrastructure.Emails;
 using BetaCinema.Infrastructure.Payments;
+using BetaCinema.Infrastructure.Security;
 using Hangfire;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -61,7 +62,7 @@ namespace BetaCinema.Infrastructure.Extensions
                 globalConfiguration.UseFilter(serviceProvider.GetRequiredService<FinalJobFailureNotifierFilter>());
             });
 
-
+            services.AddSingleton<IOtpService, OtpService>();
 
 
             services.AddHangfireServer();

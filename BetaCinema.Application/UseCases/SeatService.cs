@@ -26,7 +26,7 @@ namespace BetaCinema.Application.UseCases
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
         public async Task<ResponseObject<DataResponseSeat>> AddSeatAsync(Request_AddSeat rq)
         {
-            var seatStatusDefault = await _seatStatusRepository.GetDefaultSeatStatusAsync() ?? throw new NotFoundException("SeatStatus không tìm thấy");
+            var seatStatusDefault = await _seatStatusRepository.GetDefaultSeatStatusAsync() ?? throw new NotFoundAppException("SeatStatus không tìm thấy");
 
             var lineAsEnum = Enum.Parse<LineSeat>(rq.Line, true);
 
@@ -52,7 +52,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseSeat>> DeleteSeat(Guid id)
         {
             var seatCr = await _seatRepository.GetByIdAsync(id)
-             ?? throw new NotFoundException("Seat không tồn tại.");
+             ?? throw new NotFoundAppException("Seat không tồn tại.");
 
             seatCr.IsActive = false;
 
@@ -67,7 +67,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseSeat>> GetSeatByIdAsync(Guid id)
         {
-            var result = await _seatRepository.GetByIdAsync(id) ?? throw new NotFoundException("Không tìm thấy Seat");
+            var result = await _seatRepository.GetByIdAsync(id) ?? throw new NotFoundAppException("Không tìm thấy Seat");
 
             var dto = _mapper.Map<DataResponseSeat>(result);
 
@@ -79,7 +79,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseSeat>> UpdateSeat(Guid id, Request_UpdateSeat rq)
         {
             var seatCr = await _seatRepository.GetByIdAsync(id)
-             ?? throw new NotFoundException($"Không tìm thấy Seat với ID: {id}");
+             ?? throw new NotFoundAppException($"Không tìm thấy Seat với ID: {id}");
 
             var newNumber = rq.Number ?? seatCr.Number;
             var newLine = !string.IsNullOrEmpty(rq.Line)
@@ -91,7 +91,7 @@ namespace BetaCinema.Application.UseCases
                 var isDuplicate = !await _seatRepository.IsSeatUniqueAsync(newNumber, newLine, seatCr.RoomId);
                 if (isDuplicate)
                 {
-                    throw new ConflictException($"Vị trí ghế {newLine}{newNumber} đã tồn tại trong phòng.");
+                    throw new ConflictAppException($"Vị trí ghế {newLine}{newNumber} đã tồn tại trong phòng.");
                 }
             }
 

@@ -12,8 +12,6 @@ namespace BetaCinema.Application.Interfaces
 
         string GenerateToken();
 
-        string CreateEmailBody(string token, string userEmail);
-
         TimeSpan GetExpirationTime();
     }
 }

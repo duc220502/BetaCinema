@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using BetaCinema.Application.Common;
+using BetaCinema.Application.DTOs.Auth.External;
 using BetaCinema.Application.DTOs.DataRequest.Users;
 using BetaCinema.Application.DTOS.DataRequest.Users;
 using BetaCinema.Application.DTOS.DataResponse;
 using BetaCinema.Application.Exceptions;
 using BetaCinema.Application.Interfaces;
+using BetaCinema.Application.Interfaces.Catching;
 using BetaCinema.Domain.Entities.Users;
 using BetaCinema.Domain.Enums;
 using BetaCinema.Domain.Interfaces.Repositorys;
@@ -28,7 +30,10 @@ namespace BetaCinema.Application.UseCases.Users
         IOptions<LoyaltySettings> loyaltySettings , 
         IRankCustomerRepository rankCustomerRepository,
         IBackgroundJobService backgroundJobService  ,
-        IExternalLoginRepository externalLoginRepository) : IUserService
+        IExternalLoginRepository externalLoginRepository,
+        IExternalLinkingStore externalLinkingStore,
+        IOtpService otpService,
+        IEmailService emailService) : IUserService
     {
         private readonly IMapper _mapper = mapper;
         private readonly IUserRepository _userRepository = userRepository;
@@ -40,6 +45,9 @@ namespace BetaCinema.Application.UseCases.Users
         private readonly IRankCustomerRepository _rankCustomerRepository = rankCustomerRepository;
         private readonly IBackgroundJobService _backgroundJobService = backgroundJobService;
         private readonly IExternalLoginRepository _externalLoginRepository = externalLoginRepository;
+        private readonly IExternalLinkingStore _externalLinkingStore = externalLinkingStore;
+        private readonly IOtpService _otpService = otpService;
+        private readonly IEmailService _emailService = emailService;
 
         /*private async Task<User> GetCurrentUserAndValidateAsync()
         {
@@ -64,11 +72,11 @@ namespace BetaCinema.Application.UseCases.Users
 
             if (!isPasswordValid)
 
-                throw new BadRequestException("Mật khẩu không chính xác");
+                throw new BadRequestAppException("Mật khẩu không chính xác");
 
             if (rq.OldPass == rq.NewPass)
 
-                throw new ConflictException("Trùng mật khẩu cũ");
+                throw new ConflictAppException("Trùng mật khẩu cũ");
 
 
             var hashedPassword =_passwordSecurity.HashPassword(rq.NewPass);
@@ -91,10 +99,10 @@ namespace BetaCinema.Application.UseCases.Users
 
             if (currentUserRole != nameof(UserRole.Admin) && currentUserId != id)
             {
-                throw new ForbiddenException("Bạn không có quyền xem thông tin của người dùng này.");
+                throw new ForbiddenAppException("Bạn không có quyền xem thông tin của người dùng này.");
             }
 
-            var userCr = await _userRepository.GetByIdWithDetailsAsync(id) ?? throw new NotFoundException("User không tồn tại");
+            var userCr = await _userRepository.GetByIdWithDetailsAsync(id) ?? throw new NotFoundAppException("User không tồn tại");
 
             return ResponseObject<DataResponseUser>.ResponseSuccess("Lấy thông tin user thành công", _mapper.Map<DataResponseUser>(userCr));
         }
@@ -130,7 +138,7 @@ namespace BetaCinema.Application.UseCases.Users
         {
 
             var userCr = await _userRepository.GetByIdWithDetailsAsync(id)
-                ?? throw new NotFoundException($"Không tìm thấy người dùng với ID: {id}");
+                ?? throw new NotFoundAppException($"Không tìm thấy người dùng với ID: {id}");
 
             _mapper.Map(rq, userCr);
 
@@ -147,7 +155,7 @@ namespace BetaCinema.Application.UseCases.Users
         public async Task<ResponseObject<DataResponseUser>> DeleteUser(Guid id)
         {
             var userCr = await _userRepository.GetByIdWithDetailsAsync(id)
-             ?? throw new NotFoundException("User không tồn tại.");
+             ?? throw new NotFoundAppException("User không tồn tại.");
 
             userCr.UserStatusId = (int)Domain.Enums.UserStatus.Banned;
 
@@ -192,57 +200,79 @@ namespace BetaCinema.Application.UseCases.Users
 
             var user = await _userRepository.GetByIdWithDetailsAsync(userId!);
             if (user == null)
-                throw new NotFoundException($"User với ID '{userId}' trong token không tồn tại trong hệ thống.");
+                throw new NotFoundAppException($"User với ID '{userId}' trong token không tồn tại trong hệ thống.");
 
             if (!user.IsActive)
-                throw new BadRequestException("Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.");
+                throw new BadRequestAppException("Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.");
 
             return user;
         }
 
-        public async Task<User> FindOrCreateExternalUserAsync(string provider, string providerKey, string email, string? name, CancellationToken ct = default)
+        public async Task<ExternalAuthResult> FindOrCreateExternalUserAsync(string provider, string providerKey, string email, string? name, CancellationToken ct = default)
         {
             var existingLink = await _externalLoginRepository.GetExistingLink(provider,providerKey,ct);
 
             if (existingLink != null)
-                return existingLink.User;
-
-            var user = await _userRepository.GetByEmailOrNumberPhoneAsync(email);
-            bool isNewUser = false;
-            if (user == null)
             {
-                user = new User
-                {
-                    Email = email,
-                    UserName = name ?? email.Split('@')[0], 
-                    FullName = name ?? " User",
-                    NumberPhone = "", 
-                    Password = "",
-                    Point = 0,
-                    RankCustomerId = (int)UserRank.Standard, 
-                    RoleId = (int)UserRole.Member, 
-                    UserStatusId = (int)Domain.Enums.UserStatus.Active
-                };
-                _userRepository.Add(user);
-                isNewUser = true;
+                var u = await _userRepository.GetByIdWithRoleAsync(existingLink.UserId, ct)
+                        ?? throw new NotFoundAppException("Không có user");
+                return new ExternalAuthResult() { RequiresLinking = false ,LinkingToken = null , Email = u.Email , Provider = provider , User = u };
             }
 
-            var link = new ExternalLogin
+            var userByEmail = await _userRepository.GetByEmailOrNumberPhoneAsync(email, ct);
+
+            if (userByEmail != null)
+            {
+                var linkingToken = Guid.NewGuid().ToString("N");
+
+                await _externalLinkingStore.SaveStateAsync(linkingToken, new ExternalLinkState
+                {
+                    Provider = provider,
+                    ProviderKey = providerKey,
+                    Email = email,
+                    UserId = userByEmail.Id,
+                }, ttl: TimeSpan.FromMinutes(10), ct);
+
+                var otp = _otpService.GenerateNumericCode(6);
+                await _externalLinkingStore.SaveOtpAsync(linkingToken, otp, ttl: TimeSpan.FromMinutes(5), ct);
+
+                var subject = "OTP xác thực liên kết đăng nhập";
+                var body = $"Mã xác thực của bạn là : {otp}";
+                await _emailService.SendEmailAsync(email, subject, body);
+
+                return new ExternalAuthResult() { RequiresLinking = true,LinkingToken = linkingToken ,Email = email , Provider = provider ,User = null};
+            }
+
+            var user = new User
+            {
+                Email = email,
+                UserName = name ?? email.Split('@')[0],
+                FullName = name ?? " User",
+                NumberPhone = "",
+                Password = "",
+                Point = 0,
+                RankCustomerId = (int)UserRank.Standard,
+                RoleId = (int)UserRole.Member,
+                UserStatusId = (int)Domain.Enums.UserStatus.Active
+            };
+
+
+            var ExternalLogin = new ExternalLogin
             {
                 Provider = provider,
                 ProviderKey = providerKey,
-                UserId = user.Id
+                User = user
             };
-           _externalLoginRepository.Add(link);
+            _userRepository.Add(user);
+            _externalLoginRepository.Add(ExternalLogin);
 
-           await  _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(ct);
 
-            if (isNewUser)
-            {
-                user = await _userRepository.GetByIdWithRoleAsync(user.Id, ct); 
-            }
+            var created = await _userRepository.GetByIdWithRoleAsync(user.Id, ct)
+                      ?? throw new NotFoundAppException("Không có user");
 
-            return user!;
+
+            return new ExternalAuthResult() { RequiresLinking = false , LinkingToken = null , Email = created.Email , Provider =  provider , User = created };
 
         }
 

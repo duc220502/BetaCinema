@@ -14,7 +14,7 @@ namespace BetaCinema.Persistence.Repository
 {
     public class UserRepository(AppDbContext context) : BaseRepository<User>(context), IUserRepository
     {
-        public async Task<bool> CheckDupplicateUser(string userName, string email, string numberPhone, CancellationToken ct = default)
+        public async Task<bool> CheckDupplicateUser(string? userName, string?  email, string? numberPhone, CancellationToken ct = default)
             => await _context.Users.AnyAsync(x => x.Email == email || x.UserName == userName || x.NumberPhone == numberPhone);
 
         public async Task<User?> GetByInformationLoginAsync(string userLogin, CancellationToken ct = default)

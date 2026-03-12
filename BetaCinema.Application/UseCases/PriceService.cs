@@ -23,7 +23,7 @@ namespace BetaCinema.Application.UseCases
             decimal currentPrice = schedule.Movie.BasePrice;
 
             var bestAdjustmentRule =   await _priceRepository.FindBestMatchingRuleAsync(schedule.StartAt) ?? 
-                throw  new NotFoundException("Không tìm thấy khung giá phù hợp cho suất chiếu này.");
+                throw  new NotFoundAppException("Không tìm thấy khung giá phù hợp cho suất chiếu này.");
 
             if (bestAdjustmentRule != null)
             {

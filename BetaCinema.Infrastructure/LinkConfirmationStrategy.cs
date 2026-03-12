@@ -12,12 +12,6 @@ namespace BetaCinema.Infrastructure
     {
         public string StrategyName => "LINK";
 
-        public string CreateEmailBody(string token, string userEmail)
-        {
-            var resetLink = $"https://yourwebsite.com/reset-password?token={token}";
-            return $"Chào {userEmail},<br/>Vui lòng nhấp vào link sau để đặt lại mật khẩu: <a href='{resetLink}'>Đặt lại mật khẩu</a>";
-        }
-
         public string GenerateToken()
         {
             return Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
@@ -25,7 +19,7 @@ namespace BetaCinema.Infrastructure
 
         public TimeSpan GetExpirationTime()
         {
-            return TimeSpan.FromHours(1);
+            return TimeSpan.FromMinutes(15);
         }
     }
 }

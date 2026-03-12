@@ -54,7 +54,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseCinema>> GetCinemaById(Guid id)
         {
-            var result = await _cinemaRepository.GetByIdAsync(id)?? throw new NotFoundException("Không tìm thấy Cinema");
+            var result = await _cinemaRepository.GetByIdAsync(id)?? throw new NotFoundAppException("Không tìm thấy Cinema");
 
             var dto = _mapper.Map<DataResponseCinema>(result);
 
@@ -75,14 +75,14 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseCinema>> UpdateCinema(Guid id, Request_UpdateCinema rq)
         {
             var cinemaCr = await _cinemaRepository.GetCinemaByIdAsync(id)
-            ?? throw new NotFoundException($"Không tìm thấy rạp chiếu phim với ID: {id}");
+            ?? throw new NotFoundAppException($"Không tìm thấy rạp chiếu phim với ID: {id}");
 
             if (!string.IsNullOrEmpty(rq.Name) && rq.Name != cinemaCr.Name)
             {
                
                 var nameExists = await _cinemaRepository.IsNameUniqueAsync(rq.Name,id);
                 if (!nameExists)
-                    throw new ConflictException($"Tên rạp chiếu phim '{rq.Name}' đã tồn tại.");
+                    throw new ConflictAppException($"Tên rạp chiếu phim '{rq.Name}' đã tồn tại.");
             }
 
             _mapper.Map(rq, cinemaCr);
@@ -99,7 +99,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseCinema>> DeleteCinema(Guid id)
         {
             var cinemaCr = await _cinemaRepository.GetCinemaByIdAsync(id)
-              ?? throw new NotFoundException("Cinema không tồn tại.");
+              ?? throw new NotFoundAppException("Cinema không tồn tại.");
 
             cinemaCr.IsActive = false;
 

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BetaCinema.Application.Common;
+using BetaCinema.Application.DTOs;
 using BetaCinema.Application.DTOs.DataRequest;
 using BetaCinema.Application.DTOs.DataRequest.Users;
 using BetaCinema.Application.DTOs.DataResponse;
@@ -23,7 +24,7 @@ namespace BetaCinema.Application.UseCases.Auths
     public class AuthService(IUserRepository userRepository , IPasswordSecurityService passwordSecurity, 
         ITokenService tokenService , IUserStatusRepository userStatusRepository,IEmailService emailService ,
         IConfirmEmailRepository confirmEmailRepository,IConfirmationCodeService confirmationCodeService,
-        ITokenGenerator tokenGenerator,IMapper mapper , IUnitOfWork unitOfWork) : IAuthService
+        ITokenGenerator tokenGenerator,IMapper mapper , IUnitOfWork unitOfWork , IConfirmationEmailService confirmationEmailService) : IAuthService
 
     {
         private readonly IUserRepository _userRepository = userRepository;
@@ -39,6 +40,7 @@ namespace BetaCinema.Application.UseCases.Auths
 
         private readonly IConfirmationCodeService _confirmationCodeService = confirmationCodeService;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
+        private readonly IConfirmationEmailService _confirmationEmailService = confirmationEmailService;
 
         public async Task<ResponseObject<DataResponseToken>> Login(Request_Login rq)
         {
@@ -46,15 +48,15 @@ namespace BetaCinema.Application.UseCases.Auths
             var userCr = await _userRepository.GetByInformationLoginAsync(rq.UserLogin) ;
 
             if (userCr == null)
-                throw new NotFoundException("Tài khoản không tồn tại");
+                throw new NotFoundAppException("Tài khoản không tồn tại");
 
             bool isPasswordValid = _passwordSecurity.VerifyPassword(rq.Password,userCr.Password);
 
             if (!isPasswordValid)
-                throw new BadRequestException("Mật khẩu không đúng");
+                throw new BadRequestAppException("Mật khẩu không đúng");
 
             if (!userCr.IsActive)
-                throw new BadRequestException("Tài khoản chưa được kích hoạt");
+                throw new BadRequestAppException("Tài khoản chưa được kích hoạt");
 
             return ResponseObject<DataResponseToken>.ResponseSuccess("Đăng nhập thành công", await _tokenService.GenerateTokenAsync(userCr) );
         }
@@ -62,12 +64,17 @@ namespace BetaCinema.Application.UseCases.Auths
         public async Task<ResponseObject<object>> SendMailResetPasswordAsync(string account, ConfirmationMethod method)
         {
             var userCr = await _userRepository.GetByEmailOrNumberPhoneAsync(account)
-            ?? throw new NotFoundException("Tài khoản không tồn tại");
+            ?? throw new NotFoundAppException("Tài khoản không tồn tại");
             
-            var (confirmEmail,strategy) =  _confirmationCodeService.CreateCode(userCr.Id,method,CodePurpose.PasswordReset);
+            var (confirmEmail,token) =  _confirmationCodeService.CreateCode(userCr.Id,method,CodePurpose.PasswordReset);
 
-            var emailBody = strategy.CreateEmailBody(confirmEmail.ConfirmCode, userCr.Email);
-            await _emailService.SendEmailAsync(userCr.Email, "Yêu cầu đặt lại mật khẩu", emailBody);
+            await _confirmationEmailService.SendConfirmationEmailAsync(new ConfirmationEmailRequest
+            {
+                UserEmail = userCr.Email,
+                Purpose = CodePurpose.Register,
+                Method = method,
+                Token = token
+            });
 
             return ResponseObject<object>.ResponseSuccess("Gửi mail reset password thành công",null);
         }
@@ -75,14 +82,14 @@ namespace BetaCinema.Application.UseCases.Auths
         public async Task<ResponseObject<string>> VerifyResetCodeAsync(Request_VerifyCode rq)
         {
             var user = await _userRepository.GetByIdAsync(rq.userId)
-            ?? throw new NotFoundException("Tài khoản không tồn tại");
+            ?? throw new NotFoundAppException("Tài khoản không tồn tại");
 
             var confirmationCode = await _confirmEmailRepository.GetByUserIdAndCodeAsync(user.Id,rq.Code)
-                ?? throw new NotFoundException("Mã xác thực không tìm thấy");
+                ?? throw new NotFoundAppException("Mã xác thực không tìm thấy");
 
             if (confirmationCode.ExpiredTime < DateTime.UtcNow || confirmationCode.Purpose != CodePurpose.PasswordReset)
             {
-                throw new BadRequestException("Mã xác thực không hợp lệ hoặc đã hết hạn.");
+                throw new NotFoundAppException("Mã xác thực không hợp lệ hoặc đã hết hạn.");
             }
 
             confirmationCode.IsConfirm = true;
@@ -98,7 +105,7 @@ namespace BetaCinema.Application.UseCases.Auths
             var userCr = await _userRepository.GetByIdWithDetailsAsync(userId);
 
             if (_passwordSecurity.VerifyPassword(rq.NewPassword, userCr!.Password))
-                throw new ConflictException("Mật khẩu mới không được trùng với mật khẩu cũ.");
+                throw new ConflictAppException("Mật khẩu mới không được trùng với mật khẩu cũ.");
 
             userCr.Password = _passwordSecurity.HashPassword(rq.NewPassword);
             _userRepository.Update(userCr);

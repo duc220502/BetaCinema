@@ -9,6 +9,7 @@ namespace BetaCinema.Domain.Enums
     public enum CodePurpose
     {
         EmailConfirmation,
-        PasswordReset
+        PasswordReset,
+        Register
     }
 }

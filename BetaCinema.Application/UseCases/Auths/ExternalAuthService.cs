@@ -1,4 +1,5 @@
-﻿using BetaCinema.Application.Interfaces;
+﻿using BetaCinema.Application.DTOs.Auth.External;
+using BetaCinema.Application.Interfaces;
 using BetaCinema.Application.Interfaces.Auths;
 using BetaCinema.Domain.Entities.Users;
 using Microsoft.Extensions.Configuration;
@@ -17,7 +18,10 @@ namespace BetaCinema.Application.UseCases.Auths
         private readonly IConfiguration _configuration = configuration;
         private readonly IUserService _userService = userService;
         private readonly IExternalIdentityNormalizer _normalizer = externalIdentityNormalizer;
-        public async Task<User> HandleCallbackAsync(string provider, ClaimsPrincipal externalPrincipal, CancellationToken ct = default)
+
+      
+
+        public async Task<ExternalAuthResult> HandleCallbackAsync(string provider, ClaimsPrincipal externalPrincipal, CancellationToken ct = default)
         {
             if (!(externalPrincipal?.Identity?.IsAuthenticated ?? false))
                 throw new UnauthorizedAccessException("External principal not authenticated");
@@ -67,8 +71,9 @@ namespace BetaCinema.Application.UseCases.Auths
                     break;
             }
 
-            var user = await _userService.FindOrCreateExternalUserAsync(ext.Provider, ext.ProviderKey, ext.Email, ext.Name);
-            return user;
+            var result = await _userService.FindOrCreateExternalUserAsync(ext.Provider, ext.ProviderKey, ext.Email, ext.Name);
+            return result;
         }
     }
+
 }

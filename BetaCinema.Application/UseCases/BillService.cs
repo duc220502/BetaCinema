@@ -112,7 +112,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseBill>> GetBillById(Guid id)
         {
-            var result = await _billRepository.GetBillDetailsForResponseAsync(id) ?? throw new NotFoundException("Không tìm thấy Bill");
+            var result = await _billRepository.GetBillDetailsForResponseAsync(id) ?? throw new NotFoundAppException("Không tìm thấy Bill");
 
             var dto = _mapper.Map<DataResponseBill>(result);
 

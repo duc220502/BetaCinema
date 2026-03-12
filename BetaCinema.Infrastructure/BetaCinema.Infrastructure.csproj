@@ -10,6 +10,9 @@
     <None Remove="Emails\Templates\JobFailedAlert.cshtml" />
     <None Remove="Emails\Templates\RankUp.cshtml" />
     <None Remove="Emails\Templates\ReconciliationFailedAlert.cshtml" />
+    <None Remove="Emails\Templates\RegisterOtpEmailModel.cshtml" />
+    <None Remove="Emails\Templates\ResetPasswordLink.cshtml" />
+    <None Remove="Emails\Templates\ResetPasswordOtp.cshtml" />
     <None Remove="Emails\Templates\SecurityAlert.cshtml" />
   </ItemGroup>
 
@@ -17,6 +20,9 @@
     <EmbeddedResource Include="Emails\Templates\JobFailedAlert.cshtml" />
     <EmbeddedResource Include="Emails\Templates\RankUp.cshtml" />
     <EmbeddedResource Include="Emails\Templates\ReconciliationFailedAlert.cshtml" />
+    <EmbeddedResource Include="Emails\Templates\RegisterOtpEmailModel.cshtml" />
+    <EmbeddedResource Include="Emails\Templates\ResetPasswordLink.cshtml" />
+    <EmbeddedResource Include="Emails\Templates\ResetPasswordOtp.cshtml" />
     <EmbeddedResource Include="Emails\Templates\SecurityAlert.cshtml" />
   </ItemGroup>
 
@@ -53,6 +59,12 @@
   <ItemGroup>
     <ProjectReference Include="..\BetaCinema.Application\BetaCinema.Application.csproj" />
     <ProjectReference Include="..\BetaCinema.Domain\BetaCinema.Domain.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Compile Update="Emails\RazorTemplateService.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -57,7 +57,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseMovie>> DeleteMovie(Guid id)
         {
             var movieCr = await _movieRepository.GetByIdAsync(id)
-              ?? throw new NotFoundException("Movie không tồn tại.");
+              ?? throw new NotFoundAppException("Movie không tồn tại.");
 
             movieCr.IsActive = false;
 
@@ -79,7 +79,7 @@ namespace BetaCinema.Application.UseCases
             async () =>
             {
                 var entity = await _movieRepository.GetByIdAsync(id)
-                    ?? throw new NotFoundException("Không tìm thấy Movie");
+                    ?? throw new NotFoundAppException("Không tìm thấy Movie");
                 return entity;
             },
             ttl: TimeSpan.FromMinutes(30)
@@ -92,14 +92,14 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseMovie>> UpdateMovie(Guid id, Request_UpdateMovie rq)
         {
             var movieCr = await _movieRepository.GetByIdAsync(id)
-            ?? throw new NotFoundException($"Không tìm thấy movie với ID: {id}");
+            ?? throw new NotFoundAppException($"Không tìm thấy movie với ID: {id}");
 
             if (!string.IsNullOrEmpty(rq.Name) && rq.Name != movieCr.Name)
             {
 
                 var nameExists = await _movieRepository.IsNameUniqueAsync(rq.Name, id);
                 if (!nameExists)
-                    throw new ConflictException($"Tên movie '{rq.Name}' đã tồn tại.");
+                    throw new ConflictAppException($"Tên movie '{rq.Name}' đã tồn tại.");
             }
 
             _mapper.Map(rq, movieCr);

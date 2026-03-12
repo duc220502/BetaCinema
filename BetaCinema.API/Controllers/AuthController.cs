@@ -53,7 +53,7 @@ namespace BetaCinema.API.Controllers
         CancellationToken ct)
         {
             var o = mon.Get(scheme);
-            var cfgMgr = o.ConfigurationManager ?? throw new  NotFoundException("ConfigurationManager null");
+            var cfgMgr = o.ConfigurationManager ?? throw new  NotFoundAppException("ConfigurationManager null");
 
             try
             {
@@ -119,18 +119,16 @@ namespace BetaCinema.API.Controllers
             });
         }
         [HttpGet("auth/{provider}/login")]
-        public async Task<IActionResult> Login([FromRoute] string provider, [FromQuery] string returnUrl = "/api/auth/dev/login-success")
+        public async Task<IActionResult> Login([FromRoute] string provider, [FromQuery] string returnUrl)
         {
             if ((await _schemes.GetSchemeAsync(provider)) is null) return NotFound();
-            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) returnUrl = "/";
+            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) returnUrl = "http://localhost:5173/oauth-callback";
 
             var props = new AuthenticationProperties
             {
                 RedirectUri = Url.Content($"/api/auth/{provider}/callback")
             };
             props.Items["returnUrl"] = returnUrl;
-
-
 
             return Challenge(props, provider);
         }
@@ -145,21 +143,26 @@ namespace BetaCinema.API.Controllers
                 return Unauthorized();
 
            
-            var returnUrl = auth.Properties?.Items["returnUrl"] ?? "/api/auth/dev/login-success";
+            var returnUrl = auth.Properties?.Items["returnUrl"] ?? "http://localhost:5173/oauth-callback";
 
             if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
-                returnUrl = "/api/auth/dev/login-success";
+                returnUrl = "http://localhost:5173/oauth-callback";
 
-            var user =  await _externalAuthService.HandleCallbackAsync(provider, auth.Principal, ct);
+            var result =  await _externalAuthService.HandleCallbackAsync(provider, auth.Principal, ct);
 
-
-            var token = await _tokenService.GenerateTokenAsync(user);
+            if (result.RequiresLinking)
+            {
+                var sep = returnUrl.Contains('?') ? "&" : "?";
+                // email/provider optional (FE dùng để hiển thị)
+                return Redirect($"{returnUrl}{sep}requiresLinking=1&linkingToken={result.LinkingToken}&email={Uri.EscapeDataString(result.Email ?? "")}&provider={Uri.EscapeDataString(result.Provider ?? provider)}");
+            }
+            var token = await _tokenService.GenerateTokenAsync(result.User!);
 
             Console.WriteLine($">>> Redirecting to: {returnUrl}");
 
             var separator = returnUrl.Contains('?') ? "&" : "?";
 
-            return LocalRedirect($"{returnUrl}{separator}token={token.AccessToken}");
+            return Redirect($"{returnUrl}{separator}token={token.AccessToken}");
         }
 
         [HttpPost("auth/login")]

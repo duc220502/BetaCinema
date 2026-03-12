@@ -10,7 +10,7 @@ namespace BetaCinema.Domain.Interfaces.Repositorys
 {
     public interface IUserRepository: IRepository<User>
     {
-        Task<bool> CheckDupplicateUser(string userName, string email, string numberPhone, CancellationToken ct = default);
+        Task<bool> CheckDupplicateUser(string? userName, string? email, string? numberPhone, CancellationToken ct = default);
 
         Task<User?> GetByInformationLoginAsync(string userLogin , CancellationToken ct = default);
         Task<User?> GetByEmailOrNumberPhoneAsync(string account, CancellationToken ct = default);

@@ -92,24 +92,24 @@ namespace BetaCinema.Application.UseCases.Auths
 
             var userIdFromTokenString = principal!.FindFirst(ClaimTypes.NameIdentifier);
             if (!Guid.TryParse(userIdFromTokenString?.Value, out var userIdFromToken))
-                throw new BadRequestException("Access Token không chứa User ID hợp lệ.");
+                throw new BadRequestAppException("Access Token không chứa User ID hợp lệ.");
 
 
             var refreshToken = await _refreshTokenRepository.GetByTokenAsync(rq.RefreshToken);
 
             if (refreshToken == null)
-                throw new NotFoundException("RefreshToken không tồn tại trong database");
+                throw new NotFoundAppException("RefreshToken không tồn tại trong database");
 
             if (refreshToken.UserId != userIdFromToken)
-                throw new ForbiddenException("Hành động không được phép: Refresh token không khớp với người dùng.");
+                throw new ForbiddenAppException("Hành động không được phép: Refresh token không khớp với người dùng.");
 
             if (refreshToken.ExpiredTime < DateTime.UtcNow)
-                throw new BadRequestException("RefreshToken đã hết hạn,vui lòng đăng nhập lại");
+                throw new BadRequestAppException("RefreshToken đã hết hạn,vui lòng đăng nhập lại");
 
             var user = await _userRepository.GetByIdWithDetailsAsync(refreshToken.UserId);
 
             if (user == null)
-                throw new NotFoundException("Người dùng không tồn tại");
+                throw new NotFoundAppException("Người dùng không tồn tại");
 
             var newToken = await GenerateTokenAsync(user);
 

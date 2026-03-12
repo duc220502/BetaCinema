@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BetaCinema.Application.Exceptions
 {
-    public class ConflictException:Exception
+    public sealed class NotFoundAppException : AppException
     {
-        public ConflictException(string message) : base(message) { }
+        public NotFoundAppException(string message, object? meta = null)
+        : base("NOT_FOUND", message, meta) { }
     }
 }

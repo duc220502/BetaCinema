@@ -31,7 +31,7 @@ namespace BetaCinema.Infrastructure.Extensions
                   recurringJobId: "cleanup-expired-bills",
                   methodCall: service => service.ProcessExpiredBillsAsync(),
                   cronExpression: $"*/{cleanupIntervalInMinutes} * * * *"
-              );
+            );
         }
     }
 }

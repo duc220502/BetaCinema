@@ -32,6 +32,7 @@ namespace BetaCinema.Infrastructure.Extensions
             services.AddScoped<IIdempotencyService,IdempotencyService>();
             services.AddScoped<IRateLimiter, RateLimiter>();    
             services.AddScoped<ISeatHoldService, SeatHoldService>();
+            services.AddScoped<IExternalLinkingStore, RedisExternalLinkingStore>();
 
             // 2) ConnectionMultiplexer (singleton) – duy nhất cho toàn app
             services.AddSingleton<IConnectionMultiplexer>(sp =>

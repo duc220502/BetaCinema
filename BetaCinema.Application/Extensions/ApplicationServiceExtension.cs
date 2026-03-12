@@ -24,6 +24,7 @@ namespace BetaCinema.Application.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
             services.AddScoped<IConfirmationCodeService,ConfirmationCodeService>();
+            services.AddScoped<IConfirmationEmailService,ConfirmationEmailService>();
             services.AddScoped<ICinemaService, CinemaService>();
             services.AddScoped<IFoodService, FoodService>();
             services.AddScoped<IRoomService, RoomService>();
@@ -40,6 +41,8 @@ namespace BetaCinema.Application.Extensions
             services.AddScoped<IPaymentService , PaymentService>();
             services.AddScoped<IExternalAuthService, ExternalAuthService>();
             services.AddScoped<IExternalIdentityNormalizer, ExternalIdentityNormalizer>();
+
+
 
 
             services.Configure<ScheduleSettings>(configuration.GetSection("ScheduleSettings"));

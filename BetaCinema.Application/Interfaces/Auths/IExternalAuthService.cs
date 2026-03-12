@@ -1,4 +1,5 @@
-﻿using BetaCinema.Domain.Entities.Users;
+﻿using BetaCinema.Application.DTOs.Auth.External;
+using BetaCinema.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace BetaCinema.Application.Interfaces.Auths
 {
     public interface IExternalAuthService
     {
-        Task<User> HandleCallbackAsync(string provider, ClaimsPrincipal externalPrincipal, CancellationToken ct = default);
+        Task<ExternalAuthResult> HandleCallbackAsync(string provider, ClaimsPrincipal externalPrincipal, CancellationToken ct = default);
+
+        
     }
 }

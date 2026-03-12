@@ -40,7 +40,7 @@ namespace BetaCinema.Infrastructure.Authentication
                 var parsedToken = tokenHandler.ReadJwtToken(token);
                 tokenHandler.ValidateToken(token, validationParamsWithLifetime, out _);
 
-                throw new AccessTokenNotExpiredException("Access Token chưa hết hạn.");
+                throw new BadRequestAppException("Access Token chưa hết hạn.");
             }
             
         
@@ -54,18 +54,14 @@ namespace BetaCinema.Infrastructure.Authentication
                 if (securityToken is not JwtSecurityToken jwtSecurityToken ||
                     !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    throw new BadRequestException("Thuật toán của Access Token không hợp lệ.");
+                    throw new BadRequestAppException("Thuật toán của Access Token không hợp lệ.");
                 }
 
                 return principal;
             }
-            catch (AccessTokenNotExpiredException)
+            catch (BadRequestAppException)
             {
                 throw;
-            }
-            catch
-            {
-                throw new BadRequestException("Access Token không hợp lệ.");
             }
             
         }

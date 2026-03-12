@@ -42,7 +42,7 @@ namespace BetaCinema.Application.UseCases
             try
             {
                 var bill = await _billRepository.GetBillForCancellationAsync(billId)
-                ?? throw new NotFoundException("Không tìm thấy hóa đơn.");
+                ?? throw new NotFoundAppException("Không tìm thấy hóa đơn.");
 
                 var currentUser = await _userService.GetAndValidateCurrentUserAsync();
 
@@ -51,7 +51,7 @@ namespace BetaCinema.Application.UseCases
 
                 if (!isOwner &&  !isAdmin)
                 {
-                    throw new ForbiddenException("Bạn không có quyền thực hiện hành động này.");
+                    throw new ForbiddenAppException("Bạn không có quyền thực hiện hành động này.");
                 }
 
                 if (bill.BillStatusId != (int)Domain.Enums.BillStatus.PendingPayment && bill.BillStatusId != (int)Domain.Enums.BillStatus.Failed)
@@ -80,7 +80,7 @@ namespace BetaCinema.Application.UseCases
             catch(Exception ex)
             {
                 await _unitOfWork.RollbackTransactionAsync();
-                throw new BadRequestException($"Lỗi {ex}");
+                throw new BadRequestAppException($"Lỗi {ex}");
             }
         }
 
@@ -89,7 +89,7 @@ namespace BetaCinema.Application.UseCases
             var userId = (await _userService.GetAndValidateCurrentUserAsync()).Id;
 
             var schedule = await _scheduleRepository.GetScheduleDetailByIdAsync(request.ScheduleId)
-                ?? throw new NotFoundException("Không tìm thấy schedule");
+                ?? throw new NotFoundAppException("Không tìm thấy schedule");
 
             var preparationTicketResult = await _ticketService.PrepareTicketsForBookingAsync(schedule,request.SeatIds);
             var foodDtos = await _foodService.PrepareFoodItemsAsync(request.FoodItems);           

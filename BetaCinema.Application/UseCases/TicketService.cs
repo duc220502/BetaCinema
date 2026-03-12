@@ -49,7 +49,7 @@ namespace BetaCinema.Application.UseCases
             {
                 if (seat.SeatType == null)
                 {
-                    throw new NotFoundException($"SeatType is not loaded for SeatId {seat.Id}");
+                    throw new NotFoundAppException($"SeatType is not loaded for SeatId {seat.Id}");
                 }
 
                 var finalPrice = basePrice + seat.SeatType.Surcharge;

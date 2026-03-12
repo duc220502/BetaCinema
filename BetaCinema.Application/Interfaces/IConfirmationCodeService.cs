@@ -11,7 +11,7 @@ namespace BetaCinema.Application.Interfaces
 {
     public interface IConfirmationCodeService
     {
-        (ConfirmEmail confirmEmail, IConfirmationMethodStrategy strategy) CreateCode(Guid userId, ConfirmationMethod method, CodePurpose purpose);
+        (ConfirmEmail confirmEmail, string token) CreateCode(Guid userId, ConfirmationMethod method, CodePurpose purpose);
 
     }
 }

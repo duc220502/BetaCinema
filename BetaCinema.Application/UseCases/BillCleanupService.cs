@@ -31,7 +31,7 @@ namespace BetaCinema.Application.UseCases
                     
                     bill.BillStatusId = (int)Domain.Enums.BillStatus.Expired;
 
-                    var ticketsToInvalidate = bill.BillTickets.Select(bt => bt.Ticket).ToList() ?? throw new NotFoundException("Không tìm thấy ticket");
+                    var ticketsToInvalidate = bill.BillTickets.Select(bt => bt.Ticket).ToList() ?? throw new NotFoundAppException("Không tìm thấy ticket");
                     ticketsToInvalidate.ForEach(t => t!.IsActive = false);
 
                     var seatsToRelease = ticketsToInvalidate.Select(t => t!.Seat).ToList();

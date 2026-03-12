@@ -37,8 +37,8 @@ namespace BetaCinema.Infrastructure.Payments
             var parts = callbackData.GetValueOrDefault("vnp_TxnRef")?.Split('_')!;
             
 
-            var billId = Guid.Parse(parts[0] ?? throw new BadRequestException("Không lấy được giá  trị TxnRef"));
-            var amount = decimal.Parse(callbackData.GetValueOrDefault("vnp_Amount") ?? throw new BadRequestException("Không lấy được giá  trị Amount")) / 100;
+            var billId = Guid.Parse(parts[0] ?? throw new BadRequestAppException("Không lấy được giá  trị TxnRef"));
+            var amount = decimal.Parse(callbackData.GetValueOrDefault("vnp_Amount") ?? throw new BadRequestAppException("Không lấy được giá  trị Amount")) / 100;
             var transId = callbackData.GetValueOrDefault("vnp_TransactionNo");
             var payDate = callbackData.GetValueOrDefault("vnp_PayDate");
             var txnRef = callbackData.GetValueOrDefault("vnp_TxnRef");
@@ -55,7 +55,7 @@ namespace BetaCinema.Infrastructure.Payments
         public Task<PaymentInitiationResult> InitiatePaymentAsync(Bill bill)
         {
             var context = _httpContextAccessor.HttpContext ?? throw new InvalidOperationException("HttpContext is not available.");
-            var paymentUrl = VnpayHelper.CreatePaymentUrl(_vnpayConfig, context, bill.Id, bill.TotalMoney??throw new BadRequestException("Gía trị TotalMoney không hợp lệ"),bill.PaymentAttemptCount);
+            var paymentUrl = VnpayHelper.CreatePaymentUrl(_vnpayConfig, context, bill.Id, bill.TotalMoney??throw new BadRequestAppException("Gía trị TotalMoney không hợp lệ"),bill.PaymentAttemptCount);
 
             return Task.FromResult(new PaymentInitiationResult() { IsSuccess = true, Message = "URL VNPAY được tạo thành công.", QrCodeData = null, RedirectUrl = paymentUrl });
         }

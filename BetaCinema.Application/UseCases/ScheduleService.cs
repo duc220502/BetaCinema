@@ -48,10 +48,10 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseSchedule>> AddSchedule(Request_AddSchedule rq)
         {
             var movieCr = await _movieRepository.GetByIdAsync(rq.MovieId)
-            ?? throw new NotFoundException($"Không tìm thấy phim với ID: {rq.MovieId}");
+            ?? throw new NotFoundAppException($"Không tìm thấy phim với ID: {rq.MovieId}");
 
             var roomCr = await _roomRepository.GetByIdAsync(rq.RoomId)
-                ?? throw new NotFoundException($"Không tìm thấy phòng chiếu với ID: {rq.RoomId}");
+                ?? throw new NotFoundAppException($"Không tìm thấy phòng chiếu với ID: {rq.RoomId}");
 
             var bufferTime = _scheduleSettings.CleaningBufferMinutes;
 
@@ -60,7 +60,7 @@ namespace BetaCinema.Application.UseCases
             var isOverlapping = await _scheduleRepository.IsTimeSlotOverlappingAsync(rq.RoomId, rq.StartAt, endAt, bufferTime);
             if (isOverlapping)
             {
-                throw new ConflictException("Lịch chiếu bị trùng (đã tính cả thời gian chờ).");
+                throw new ConflictAppException("Lịch chiếu bị trùng (đã tính cả thời gian chờ).");
             }
 
             var nameSchedule = GenerateScheduleName(movieCr, roomCr, rq.StartAt);
@@ -88,7 +88,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseSchedule>> GetScheduleById(Guid id)
         {
-            var result = await _scheduleRepository.GetByIdAsync(id) ?? throw new NotFoundException("Không tìm thấy Schedule");
+            var result = await _scheduleRepository.GetByIdAsync(id) ?? throw new NotFoundAppException("Không tìm thấy Schedule");
 
             var dto = _mapper.Map<DataResponseSchedule>(result);
 
@@ -98,10 +98,10 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<List<DataResponseAvailableSlotDto>>> GetAvailableSlotsAsync(Guid roomId, Guid movieId, DateTime date)
         {
             var movie = await _movieRepository.GetByIdAsync(movieId)
-                        ?? throw new NotFoundException("Không tìm thấy phim.");
+                        ?? throw new NotFoundAppException("Không tìm thấy phim.");
 
             var room = await _roomRepository.GetByIdAsync(roomId)
-                        ?? throw new NotFoundException("Không tìm thấy room.");
+                        ?? throw new NotFoundAppException("Không tìm thấy room.");
 
             var bufferMinutes = _scheduleSettings.CleaningBufferMinutes;
 
@@ -149,10 +149,10 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseSchedule>> UpdateSchedule(Guid id, Request_UpdateSchedule rq)
         {
             var scheduleCr = await _scheduleRepository.GetByIdAsync(id)
-                       ?? throw new NotFoundException("Không tìm thấy lịch chiếu.");
+                       ?? throw new NotFoundAppException("Không tìm thấy lịch chiếu.");
 
             var movieCr = await _movieRepository.GetByIdAsync(scheduleCr.MovieId)
-                       ?? throw new NotFoundException("Không tìm thấy phim.");
+                       ?? throw new NotFoundAppException("Không tìm thấy phim.");
 
             var bufferTime = _scheduleSettings.CleaningBufferMinutes;
 
@@ -162,7 +162,7 @@ namespace BetaCinema.Application.UseCases
                 var isOverlapping = await _scheduleRepository.IsTimeSlotOverlappingAsync(scheduleCr.RoomId, rq.StartAt.Value, endAt, bufferTime);
                 if (isOverlapping)
                 {
-                    throw new ConflictException("Lịch chiếu bị trùng (đã tính cả thời gian chờ).");
+                    throw new ConflictAppException("Lịch chiếu bị trùng (đã tính cả thời gian chờ).");
                 }
             }
 
@@ -182,7 +182,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseSchedule>> DeleteSchedule(Guid id)
         {
             var scheduleCr = await _scheduleRepository.GetByIdAsync(id)
-            ?? throw new NotFoundException("Schedule không tồn tại.");
+            ?? throw new NotFoundAppException("Schedule không tồn tại.");
 
             scheduleCr.IsActive = false;
 

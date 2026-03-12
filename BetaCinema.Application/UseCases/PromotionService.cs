@@ -68,7 +68,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponsePromotion>> DeletePromotion(Guid id)
         {
             var promotionCr = await _promotionRepository.GetByIdAsync(id)
-             ?? throw new NotFoundException("Promotion không tồn tại.");
+             ?? throw new NotFoundAppException("Promotion không tồn tại.");
 
             promotionCr.IsActive = false;
 
@@ -83,7 +83,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponsePromotion>> GetPromotionById(Guid id)
         {
-            var result = await _promotionRepository.GetByIdAsync(id) ?? throw new NotFoundException("Không tìm thấy Promotion");
+            var result = await _promotionRepository.GetByIdAsync(id) ?? throw new NotFoundAppException("Không tìm thấy Promotion");
 
             var dto = _mapper.Map<DataResponsePromotion>(result);
 
@@ -95,7 +95,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponsePromotion>> UpdatePromotion(Guid id, Request_UpdatePromotion rq)
         {
             var promotionCr = await _promotionRepository.GetByIdAsync(id)
-            ?? throw new NotFoundException($"Không tìm thấy Promotion với ID: {id}");
+            ?? throw new NotFoundAppException($"Không tìm thấy Promotion với ID: {id}");
 
             _mapper.Map(rq, promotionCr);
 

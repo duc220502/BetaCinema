@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BetaCinema.Application.Common;
+using BetaCinema.Application.DTOs;
 using BetaCinema.Application.DTOs.DataRequest;
 using BetaCinema.Application.DTOs.DataResponse;
 using BetaCinema.Application.DTOS.DataRequest.Users;
@@ -19,34 +20,29 @@ using System.Threading.Tasks;
 namespace BetaCinema.Application.UseCases.Users
 {
     public class UserRegistrationService(IUserRepository userRepository, IMapper mapper,
-        IRankCustomerRepository rankCustomerRepository, IRoleRepository roleRepository,
-        IUserStatusRepository userStatusRepository, IPasswordSecurityService passwordSecurity,
-        IConfirmationCodeService confirmationCodeService, IEmailService emailService,
-        IConfirmEmailRepository confirmEmailRepository, IUnitOfWork unitOfWork) : IUserRegistrationService
+         IPasswordSecurityService passwordSecurity,IConfirmationCodeService confirmationCodeService,
+        IConfirmEmailRepository confirmEmailRepository, IUnitOfWork unitOfWork , IConfirmationEmailService confirmationEmailService) : IUserRegistrationService
     {
         private readonly IMapper _mapper = mapper;
         private readonly IUserRepository _userRepository = userRepository;
-        private readonly IRankCustomerRepository _rankCustomerRepository = rankCustomerRepository;
-        private readonly IRoleRepository _roleRepository = roleRepository;
-        private readonly IUserStatusRepository _userStatusRepository = userStatusRepository;
         private readonly IPasswordSecurityService _passwordSecurity = passwordSecurity;
         private readonly IConfirmationCodeService _confirmationCodeService = confirmationCodeService;
-        private readonly IEmailService _emailService = emailService;
         private readonly IConfirmEmailRepository _confirmEmailRepository = confirmEmailRepository;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
+        private readonly IConfirmationEmailService _confirmationEmailService = confirmationEmailService;
 
         public async Task<ResponseObject<DataResponseUser>> ConfirmEmailRegister(Request_ConfirmEmailRegister rq)
         {
             var confirmEmailCr = await _confirmEmailRepository.GetByUserIdAndCodeAsync(rq.UserId, rq.Code) 
-                ?? throw new NotFoundException("Không có ConfirmEmail hợp lệ");
+                ?? throw new NotFoundAppException("Không có ConfirmEmail hợp lệ");
 
             var userCr = await _userRepository.GetByIdWithDetailsAsync(rq.UserId)
-                ?? throw new NotFoundException("Không tìm thấy user");
+                ?? throw new NotFoundAppException("Không tìm thấy user");
 
 
 
-            if (confirmEmailCr.ExpiredTime < DateTime.UtcNow || confirmEmailCr.Purpose != CodePurpose.EmailConfirmation)
-                throw new BadRequestException("Mã xác thực không hợp lệ hoặc đã hết hạn.");
+            if (confirmEmailCr.ExpiredTime < DateTime.UtcNow || confirmEmailCr.Purpose != CodePurpose.Register)
+                throw new BadRequestAppException("Mã xác thực không hợp lệ hoặc đã hết hạn.");
 
             confirmEmailCr.IsConfirm = true;
 
@@ -89,7 +85,7 @@ namespace BetaCinema.Application.UseCases.Users
 
             _userRepository.Add(newUser);
 
-            var (confirmEmail, strategy) = _confirmationCodeService.CreateCode(newUser.Id, method, CodePurpose.EmailConfirmation);
+            var (confirmEmail, token) = _confirmationCodeService.CreateCode(newUser.Id, method, CodePurpose.Register);
 
             _confirmEmailRepository.Add(confirmEmail);
 
@@ -101,8 +97,13 @@ namespace BetaCinema.Application.UseCases.Users
             
             var userDto = _mapper.Map<DataResponseUser>(createdUser);
 
-            var emailBody = strategy.CreateEmailBody(confirmEmail.ConfirmCode, newUser.Email);
-            await _emailService.SendEmailAsync(newUser.Email, "Yêu cầu xác thực đăng kí tài khoản", emailBody);
+            await _confirmationEmailService.SendConfirmationEmailAsync(new ConfirmationEmailRequest
+            {
+                UserEmail = newUser.Email,
+                Purpose = CodePurpose.Register,
+                Method = method,
+                Token = token
+            });
 
             return ResponseObject<DataResponseUser>.ResponseSuccess("Đăng kí thành công vui lòng xác thực để kích hoạt tài khoản", userDto);
 

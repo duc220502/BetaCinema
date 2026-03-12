@@ -52,7 +52,7 @@ namespace BetaCinema.Persistence
             {
                 if (ex.InnerException is SqlException sqlEx && sqlEx.Number == 2627) 
                 {
-                    throw new DataConflictException("Bản ghi đã tồn tại.");
+                    throw new ConflictAppException("Bản ghi đã tồn tại.");
                 }
                 throw;
             }

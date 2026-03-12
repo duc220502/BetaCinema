@@ -1,0 +1,46 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mã OTP xác nhận đăng ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        .otp {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c9302c;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Xác nhận đăng ký tài khoản</h1>
+        <p>Chào @Model.UserEmail,</p>
+        <p>Cảm ơn bạn đã đăng ký tài khoản tại <strong>Beta Cinema</strong>.</p>
+        <p>Để hoàn tất việc đăng ký, vui lòng nhập mã OTP sau vào màn hình xác thực:</p>
+        <p class="otp">@Model.Otp</p>
+        <p>Mã OTP này chỉ có hiệu lực trong thời gian ngắn. Vui lòng không chia sẻ mã với bất kỳ ai.</p>
+        <br />
+        <p>Trân trọng,</p>
+        <p>Đội ngũ Beta Cinema</p>
+    </div>
+</body>
+</html>

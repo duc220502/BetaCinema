@@ -54,7 +54,7 @@ namespace BetaCinema.Application.UseCases
 
         public async Task<ResponseObject<DataResponseRoom>> GetRoomById(Guid id)
         {
-            var result = await _roomRepository.GetByIdAsync(id) ?? throw new NotFoundException("Không tìm thấy Room");
+            var result = await _roomRepository.GetByIdAsync(id) ?? throw new NotFoundAppException("Không tìm thấy Room");
 
             var dto = _mapper.Map<DataResponseRoom>(result);
 
@@ -64,14 +64,14 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseRoom>> UpdateRoom(Guid id, Request_UpdateRoom rq)
         {
             var roomCr = await _roomRepository.GetRoomByIdAsync(id)
-             ?? throw new NotFoundException($"Không tìm thấy Room với ID: {id}");
+             ?? throw new NotFoundAppException($"Không tìm thấy Room với ID: {id}");
 
             if (!string.IsNullOrEmpty(rq.Name) && rq.Name != roomCr.Name)
             {
 
                 var nameExists = await _roomRepository.IsRoomNameUniqueAsync(rq.Name, id);
                 if (!nameExists)
-                    throw new ConflictException($"Tên Room '{rq.Name}' đã tồn tại.");
+                    throw new ConflictAppException($"Tên Room '{rq.Name}' đã tồn tại.");
             }
 
             _mapper.Map(rq, roomCr);
@@ -88,7 +88,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<DataResponseRoom>> DeleteRoom(Guid id)
         {
             var roomCr = await _roomRepository.GetRoomByIdAsync(id)
-             ?? throw new NotFoundException("Room không tồn tại.");
+             ?? throw new NotFoundAppException("Room không tồn tại.");
 
             roomCr.IsActive = false;
 

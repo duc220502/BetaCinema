@@ -39,7 +39,7 @@ namespace BetaCinema.Application.UseCases
         public async Task<ResponseObject<PaymentInitiationResult>> InitiatePaymentAsync(Guid billId, Domain.Enums.PaymentMethod paymentMethod)
         {
             var bill = await _billRepository.GetBillWithDetailsAsync(billId)
-            ?? throw new NotFoundException("Không tìm thấy hóa đơn.");
+            ?? throw new NotFoundAppException("Không tìm thấy hóa đơn.");
 
 
             if (bill.BillStatusId != (int)Domain.Enums.BillStatus.PendingPayment && bill.BillStatusId != (int)Domain.Enums.BillStatus.Failed)
@@ -92,13 +92,13 @@ namespace BetaCinema.Application.UseCases
             var confirmationResult = await vnpayStrategy.ConfirmPaymentAsync(vnpayResponseData);
 
             var bill = await _billRepository.GetBillDetailsForResponseAsync(confirmationResult.BillId)
-           ?? throw new NotFoundException("Hóa đơn trong IPN không tồn tại.");
+           ?? throw new NotFoundAppException("Hóa đơn trong IPN không tồn tại.");
 
             if (!confirmationResult.IsSuccess)
             {
                 bill.BillStatusId =  (int)Domain.Enums.BillStatus.Failed;
                 await _unitOfWork.SaveChangesAsync();
-                throw new BadRequestException($"Xác thực VNPAY IPN thất bại cho hóa đơn {bill.Id}: {confirmationResult.ErrorMessage}");
+                throw new BadRequestAppException($"Xác thực VNPAY IPN thất bại cho hóa đơn {bill.Id}: {confirmationResult.ErrorMessage}");
             }           
 
             if (bill.TotalMoney != confirmationResult.Amount)
@@ -120,7 +120,7 @@ namespace BetaCinema.Application.UseCases
                 _backgroundJobService.Enqueue<IAlertingService>(
                 alertService => alertService.SendReconciliationFailedAlertAsync(alertViewModel));
 
-                throw new BadRequestException($"LỖI ĐỐI SOÁT: Số tiền VNPAY trả về ({confirmationResult.Amount}) không khớp với DB ({bill.TotalMoney}) cho hóa đơn {bill.Id}");
+                throw new BadRequestAppException($"LỖI ĐỐI SOÁT: Số tiền VNPAY trả về ({confirmationResult.Amount}) không khớp với DB ({bill.TotalMoney}) cho hóa đơn {bill.Id}");
             }
 
             var isTransactionValidOnVnpay = await vnpayStrategy.VerifyTransactionOnGatewayAsync(confirmationResult.BillId,confirmationResult.Amount,confirmationResult.PaymentGatewayTransactionId! , confirmationResult.PayDate! , confirmationResult.TxnRef!);
@@ -156,7 +156,7 @@ namespace BetaCinema.Application.UseCases
                 if (bill == null || bill.BillStatusId != (int)Domain.Enums.BillStatus.PendingPayment)
                 {
                     await _unitOfWork.RollbackTransactionAsync();
-                    throw new NotFoundException($"Hóa đơn {bill!.Id} đã được xử lý hoặc không hợp lệ");
+                    throw new NotFoundAppException($"Hóa đơn {bill!.Id} đã được xử lý hoặc không hợp lệ");
                 }
 
 
@@ -169,10 +169,10 @@ namespace BetaCinema.Application.UseCases
                 bill.PaymentGatewayTransactionId = paymentGatewayTransactionId;
                 _billRepository.Update(bill);
 
-                await _userService.UpdateUserRankAfterPurchaseAsync(bill.User ?? throw new NotFoundException("Không tìm thấy user"), bill.TotalMoney ?? 0);
+                await _userService.UpdateUserRankAfterPurchaseAsync(bill.User ?? throw new NotFoundAppException("Không tìm thấy user"), bill.TotalMoney ?? 0);
 
                 //Cập nhật tình trạng ghế
-                var seatsToUpdate = bill.BillTickets.Select(bt => bt.Ticket?.Seat).ToList() ?? throw new NotFoundException("Không có seat");
+                var seatsToUpdate = bill.BillTickets.Select(bt => bt.Ticket?.Seat).ToList() ?? throw new NotFoundAppException("Không có seat");
 
                 _seatService.UpdateSeatsAfterPurchase(seatsToUpdate!);
 
@@ -186,14 +186,14 @@ namespace BetaCinema.Application.UseCases
             catch (Exception ex)
             {
                 await _unitOfWork.RollbackTransactionAsync();
-                throw new BadRequestException($"Lỗi {ex}");
+                throw new  BadRequestAppException($"Lỗi {ex}");
             }
         }
 
         public async Task<ResponseObject<object>> ProcessCashPaymentConfirmationAsync(Guid billId)
         {
             var bill = await _billRepository.GetBillDetailsForResponseAsync(billId)
-                ?? throw new NotFoundException("Không tìm thấy hóa đơn để xác nhận thanh toán.");
+                ?? throw new NotFoundAppException("Không tìm thấy hóa đơn để xác nhận thanh toán.");
 
 
             var cashStrategy = _strategyFactory.GetStrategy(Domain.Enums.PaymentMethod.CASH);
