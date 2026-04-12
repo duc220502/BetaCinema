@@ -1,4 +1,5 @@
-﻿using BetaCinema.Domain.Entities.Seats;
+﻿using BetaCinema.Domain.Entities.Carts;
+using BetaCinema.Domain.Entities.Seats;
 using BetaCinema.Domain.Entities.ShowTimes;
 using BetaCinema.Domain.Interfaces;
 

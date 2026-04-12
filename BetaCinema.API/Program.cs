@@ -46,6 +46,7 @@ namespace BetaCinema.API
             builder.Services.AddApiExtension();
             builder.Services.AddApplicationServices(builder.Configuration);
             builder.Services.AddFluentValidation();
+
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddRedis(builder.Configuration);
            ;

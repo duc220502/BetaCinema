@@ -24,7 +24,7 @@ namespace BetaCinema.API.Controllers
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserPromotionById(Guid id)
-        {
+        { 
             var response = await _userPromotionService.GetUserPromotionByIdAsync(id);
             return Ok(response);
         }

@@ -1,5 +1,7 @@
 ﻿using BetaCinema.Domain.Entities;
+using BetaCinema.Domain.Entities.Carts;
 using BetaCinema.Domain.Entities.Foods;
+using BetaCinema.Domain.Entities.Notifications;
 using BetaCinema.Domain.Entities.Orders;
 using BetaCinema.Domain.Entities.Promotions;
 using BetaCinema.Domain.Entities.Seats;
@@ -76,6 +78,17 @@ namespace BetaCinema.Persistence.DBContext
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
         public DbSet<ExternalLogin> ExternalLogins { get; set; }
+
+        public DbSet<Cart> Carts { get; set; }
+
+        public DbSet<CartFoodItem> CartFoodItems { get; set; }
+
+
+        public DbSet<Notification> Notifications { get; set; }
+
+        public DbSet<UserNotification> UserNotifications{ get; set; }
+
+        public DbSet<WatchList> WatchLists { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

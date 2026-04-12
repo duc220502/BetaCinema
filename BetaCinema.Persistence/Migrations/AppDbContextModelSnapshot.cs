@@ -41,6 +41,52 @@ namespace BetaCinema.Persistence.Migrations
                     b.ToTable("Banners");
                 });
 
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Carts.Cart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId", "IsActive");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Carts.CartFoodItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CartId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("FoodId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("FoodId");
+
+                    b.ToTable("CartFoodItems");
+                });
+
             modelBuilder.Entity("BetaCinema.Domain.Entities.Foods.Food", b =>
                 {
                     b.Property<Guid>("Id")
@@ -86,6 +132,82 @@ namespace BetaCinema.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GeneralSettings");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Notifications.Notification", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ActionUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AudienceType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DispatchStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ExpireAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NotificationType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Notifications.UserNotification", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeleteAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("NotificationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ReadAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NotificationId");
+
+                    b.HasIndex("UserId", "IsRead");
+
+                    b.HasIndex("UserId", "NotificationId")
+                        .IsUnique();
+
+                    b.ToTable("UserNotifications");
                 });
 
             modelBuilder.Entity("BetaCinema.Domain.Entities.Orders.Bill", b =>
@@ -840,6 +962,37 @@ namespace BetaCinema.Persistence.Migrations
                     b.ToTable("Schedules");
                 });
 
+            modelBuilder.Entity("BetaCinema.Domain.Entities.ShowTimes.WatchList", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId", "MovieId")
+                        .IsUnique()
+                        .HasDatabaseName("UX_Watchlists_UserId_MovieId");
+
+                    b.ToTable("WatchLists");
+                });
+
             modelBuilder.Entity("BetaCinema.Domain.Entities.Users.ConfirmEmail", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1138,6 +1291,55 @@ namespace BetaCinema.Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Carts.Cart", b =>
+                {
+                    b.HasOne("BetaCinema.Domain.Entities.Users.User", "User")
+                        .WithMany("Carts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Carts.CartFoodItem", b =>
+                {
+                    b.HasOne("BetaCinema.Domain.Entities.Carts.Cart", "Cart")
+                        .WithMany("CartFoodItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("BetaCinema.Domain.Entities.Foods.Food", "Food")
+                        .WithMany("CartFoodItems")
+                        .HasForeignKey("FoodId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Food");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Notifications.UserNotification", b =>
+                {
+                    b.HasOne("BetaCinema.Domain.Entities.Notifications.Notification", "Notification")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("NotificationId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("BetaCinema.Domain.Entities.Users.User", "User")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Notification");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BetaCinema.Domain.Entities.Orders.Bill", b =>
                 {
                     b.HasOne("BetaCinema.Domain.Entities.Orders.BillStatus", "BillStatus")
@@ -1336,6 +1538,25 @@ namespace BetaCinema.Persistence.Migrations
                     b.Navigation("Room");
                 });
 
+            modelBuilder.Entity("BetaCinema.Domain.Entities.ShowTimes.WatchList", b =>
+                {
+                    b.HasOne("BetaCinema.Domain.Entities.ShowTimes.Movie", "Movie")
+                        .WithMany("WatchLists")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BetaCinema.Domain.Entities.Users.User", "User")
+                        .WithMany("WatchLists")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BetaCinema.Domain.Entities.Users.ConfirmEmail", b =>
                 {
                     b.HasOne("BetaCinema.Domain.Entities.Users.User", "User")
@@ -1415,9 +1636,21 @@ namespace BetaCinema.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Carts.Cart", b =>
+                {
+                    b.Navigation("CartFoodItems");
+                });
+
             modelBuilder.Entity("BetaCinema.Domain.Entities.Foods.Food", b =>
                 {
                     b.Navigation("BillFoods");
+
+                    b.Navigation("CartFoodItems");
+                });
+
+            modelBuilder.Entity("BetaCinema.Domain.Entities.Notifications.Notification", b =>
+                {
+                    b.Navigation("UserNotifications");
                 });
 
             modelBuilder.Entity("BetaCinema.Domain.Entities.Orders.Bill", b =>
@@ -1474,6 +1707,8 @@ namespace BetaCinema.Persistence.Migrations
             modelBuilder.Entity("BetaCinema.Domain.Entities.ShowTimes.Movie", b =>
                 {
                     b.Navigation("Schedules");
+
+                    b.Navigation("WatchLists");
                 });
 
             modelBuilder.Entity("BetaCinema.Domain.Entities.ShowTimes.MovieType", b =>
@@ -1514,13 +1749,19 @@ namespace BetaCinema.Persistence.Migrations
                 {
                     b.Navigation("Bills");
 
+                    b.Navigation("Carts");
+
                     b.Navigation("ConfirmEmails");
 
                     b.Navigation("ExternalLogins");
 
                     b.Navigation("RefreshTokens");
 
+                    b.Navigation("UserNotifications");
+
                     b.Navigation("UserPromotions");
+
+                    b.Navigation("WatchLists");
                 });
 
             modelBuilder.Entity("BetaCinema.Domain.Entities.Users.UserStatus", b =>

@@ -27,5 +27,9 @@ namespace BetaCinema.Domain.Interfaces.Repositorys
 
         Task<User?> GetByIdWithRoleAsync(Guid id, CancellationToken ct = default);
 
+        Task<PageResult<User>> GetPagedActiveUserIdsAsync(Pagination pagination, CancellationToken ct = default);
+
+        Task<List<Guid>> GetActiveUserIdsInAsync(List<Guid> userIds, CancellationToken ct = default);
+
     }
 }

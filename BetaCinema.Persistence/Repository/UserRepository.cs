@@ -17,9 +17,9 @@ namespace BetaCinema.Persistence.Repository
         public async Task<bool> CheckDupplicateUser(string? userName, string?  email, string? numberPhone, CancellationToken ct = default)
             => await _context.Users.AnyAsync(x => x.Email == email || x.UserName == userName || x.NumberPhone == numberPhone);
 
-        public async Task<User?> GetByInformationLoginAsync(string userLogin, CancellationToken ct = default)
+        public Task<User?> GetByInformationLoginAsync(string userLogin, CancellationToken ct = default)
 
-           =>  await _context.Users.Include(x => x.Role) 
+           => _context.Users.Include(x => x.Role) 
                     .FirstOrDefaultAsync(x =>x.UserStatusId == (int)Domain.Enums.UserStatus.Active  && x.UserName == userLogin || x.Email == userLogin || x.NumberPhone == userLogin, ct);
 
         public async Task<User?> GetByEmailOrNumberPhoneAsync(string account, CancellationToken ct = default)
@@ -53,5 +53,13 @@ namespace BetaCinema.Persistence.Repository
         public async Task<User?> GetByIdWithRoleAsync(Guid id, CancellationToken ct = default)
 
         => await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Id == id, ct);
+
+        public async Task<PageResult<User>> GetPagedActiveUserIdsAsync(Pagination pagination, CancellationToken ct = default)
+
+        => await _context.Users.AsNoTracking().Where(x => x.UserStatusId == (int)Domain.Enums.UserStatus.Active).ToPagedListAsync(pagination);
+
+        public async Task<List<Guid>> GetActiveUserIdsInAsync(List<Guid> userIds, CancellationToken ct = default)
+        
+        => await _context.Users.AsNoTracking().Where(x => userIds.Contains(x.Id) && x.UserStatusId == (int)Domain.Enums.UserStatus.Active).Select(x => x.Id).ToListAsync(ct);
     }
 }

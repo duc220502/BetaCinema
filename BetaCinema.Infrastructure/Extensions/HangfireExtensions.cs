@@ -14,7 +14,7 @@ namespace BetaCinema.Infrastructure.Extensions
     public static class HangfireExtensions
     {
 
-        public static void  AddHangfireJobs(this IServiceProvider serviceProvider)
+        public static void AddHangfireJobs(this IServiceProvider serviceProvider)
         {
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
 
@@ -22,7 +22,7 @@ namespace BetaCinema.Infrastructure.Extensions
 
             if (cleanupIntervalInMinutes <= 0)
             {
-                cleanupIntervalInMinutes = 1; 
+                cleanupIntervalInMinutes = 1;
             }
 
             var recurringJobManager = serviceProvider.GetRequiredService<IRecurringJobManager>();
@@ -33,5 +33,7 @@ namespace BetaCinema.Infrastructure.Extensions
                   cronExpression: $"*/{cleanupIntervalInMinutes} * * * *"
             );
         }
+
+
     }
 }

@@ -40,6 +40,12 @@ namespace BetaCinema.Persistence.Extensions
             services.AddScoped<IBillStatusRepository, BillStatusRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IExternalLoginRepository , ExternalLoginRepository>();
+
+
+            services.AddScoped<ICartFoodItemRepository, CartFoodItemRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IUserNotificationRepository, UserNotificationRepository>();
             services.AddMemoryCache();
 
 

@@ -1,8 +1,11 @@
 ﻿using BetaCinema.Application.Interfaces;
+using BetaCinema.Application.Interfaces.AI;
 using BetaCinema.Application.Interfaces.Auths;
 using BetaCinema.Application.Interfaces.Catching;
 using BetaCinema.Application.Interfaces.PaymentStrategies;
 using BetaCinema.Application.Mapping;
+using BetaCinema.Application.UseCases.AI;
+using BetaCinema.Infrastructure.AI;
 using BetaCinema.Infrastructure.Authentication;
 using BetaCinema.Infrastructure.Catching.Redis;
 using BetaCinema.Infrastructure.Configuration;
@@ -63,12 +66,21 @@ namespace BetaCinema.Infrastructure.Extensions
             });
 
             services.AddSingleton<IOtpService, OtpService>();
-
+            services.AddScoped<IAiChatService, AiChatService>();
+            services.AddScoped<IChatMovieQueryService, ChatMovieQueryService>();
 
             services.AddHangfireServer();
 
+            services.AddHttpClient<OpenAiModelClient>();
+            services.AddHttpClient<GeminiModelClient>();
 
-           
+
+            services.AddScoped<IAiChatMemoryService, AiChatMemoryService>();
+            services.AddScoped<IAiPolicyService, AiPolicyService>();
+
+            services.AddScoped<IGenerativeAiService, OpenAiModelClient>();
+            services.AddScoped<IGenerativeAiService, GeminiModelClient>();
+
 
             services.AddAutoMapper(typeof(UserProfile).Assembly);
             return services;

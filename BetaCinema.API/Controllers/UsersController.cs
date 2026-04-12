@@ -15,6 +15,19 @@ namespace BetaCinema.API.Controllers
         private readonly IUserService _userService = userService;
 
 
+        [HttpGet("debug-claims")]
+        [Authorize]
+        public IActionResult DebugClaims()
+        {
+            var claims = User.Claims.Select(x => new
+            {
+                x.Type,
+                x.Value
+            });
+
+            return Ok(claims);
+        }
+
 
         [HttpGet("{id}")]
         [Authorize]

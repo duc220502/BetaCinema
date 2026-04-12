@@ -28,5 +28,6 @@ namespace BetaCinema.Domain.Entities.ShowTimes
         public virtual Rate? Rate { get; set; }
 
         public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
+        public virtual ICollection<WatchList> WatchLists { get; set; } = new List<WatchList>();
     }
 }

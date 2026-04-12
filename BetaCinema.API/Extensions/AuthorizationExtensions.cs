@@ -27,6 +27,19 @@ namespace BetaCinema.API.Extensions
                     policy.RequireAuthenticatedUser();
                     // (tuỳ chọn) policy.RequireClaim("amr", "pwd", "external");
                 });
+
+                options.AddPolicy("AdminApi", policy =>
+                {
+                    policy.AuthenticationSchemes.Add("Bearer");
+                    policy.RequireAuthenticatedUser();
+                    policy.RequireRole("Admin");
+                });
+
+                options.AddPolicy("UserApi", policy =>
+                {
+                    policy.AuthenticationSchemes.Add("Bearer");
+                    policy.RequireAuthenticatedUser();
+                });
             });
 
             return services;

@@ -1,4 +1,7 @@
-﻿using BetaCinema.Domain.Entities.Orders;
+﻿using BetaCinema.Domain.Entities.Carts;
+using BetaCinema.Domain.Entities.Notifications;
+using BetaCinema.Domain.Entities.Orders;
+using BetaCinema.Domain.Entities.ShowTimes;
 using BetaCinema.Domain.Interfaces;
 
 namespace BetaCinema.Domain.Entities.Users
@@ -33,6 +36,11 @@ namespace BetaCinema.Domain.Entities.Users
 
         public virtual ICollection<ConfirmEmail> ConfirmEmails { get; set; } = new List<ConfirmEmail>();
         public virtual ICollection<ExternalLogin> ExternalLogins { get; set; } = new List<ExternalLogin>();
+
+        public virtual ICollection<UserNotification> UserNotifications { get; set; } = new List<UserNotification>();
+
+        public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public virtual ICollection<WatchList> WatchLists { get; set; } = new List<WatchList>();
 
     }
 }

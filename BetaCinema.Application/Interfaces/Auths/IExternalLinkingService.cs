@@ -12,5 +12,7 @@ namespace BetaCinema.Application.Interfaces.Auths
     public interface IExternalLinkingService
     {
         Task<ResponseObject<DataResponseToken>> ConfirmLinkAsync(ConfirmExternalLinkRequest req, CancellationToken ct);
+        Task<ResponseObject<object>> ResendOtpAsync(ResendExternalLinkOtpRequest req, CancellationToken ct);
     }
 }
+
