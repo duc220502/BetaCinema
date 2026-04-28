@@ -1,4 +1,5 @@
 ﻿using BetaCinema.Domain.Entities.Carts;
+using BetaCinema.Domain.Entities.Discussions;
 using BetaCinema.Domain.Entities.Notifications;
 using BetaCinema.Domain.Entities.Orders;
 using BetaCinema.Domain.Entities.ShowTimes;
@@ -42,5 +43,13 @@ namespace BetaCinema.Domain.Entities.Users
         public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
         public virtual ICollection<WatchList> WatchLists { get; set; } = new List<WatchList>();
 
+        public virtual ICollection<MovieReview> MovieReviews { get; set; } = new List<MovieReview>();
+
+
+        public virtual ICollection<ReviewComment> ReviewComments { get; set; } = new List<ReviewComment>();
+
+        public virtual ICollection<ReviewComment> MentionedInReviewComments { get; set; } = new List<ReviewComment>();
     }
+
+
 }

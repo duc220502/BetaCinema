@@ -21,6 +21,7 @@ namespace BetaCinema.Domain.Entities.Notifications
 
         public string? ImgUrl { get; set; }
 
+
         public DateTime CreatedAt { get; set; }
 
         public NotificationAudienceType AudienceType { get; set; }

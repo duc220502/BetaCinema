@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace BetaCinema.Domain.Enums
 {
-    public enum ReviewStatus
+    public enum ReactionType
     {
-        Draft = 1,
-        Published = 2,
-        UnderReview = 3,
-        Hidden = 4,
-        Rejected = 5,
-        Deleted = 6
-
+        Like = 1,
+        Love = 2,
+        Haha = 3,
+        Wow = 4,
+        Sad = 5,
+        Angry = 6
     }
 }

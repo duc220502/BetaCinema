@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace BetaCinema.Domain.Enums
 {
-    public enum ReviewStatus
+    public enum ReportStatus
     {
-        Draft = 1,
-        Published = 2,
-        UnderReview = 3,
-        Hidden = 4,
-        Rejected = 5,
-        Deleted = 6
-
+        Pending = 1,
+        Reviewing = 2,
+        Resolved = 3,
+        Rejected = 4
     }
 }

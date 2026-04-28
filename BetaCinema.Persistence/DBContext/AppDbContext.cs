@@ -1,5 +1,6 @@
 ﻿using BetaCinema.Domain.Entities;
 using BetaCinema.Domain.Entities.Carts;
+using BetaCinema.Domain.Entities.Discussions;
 using BetaCinema.Domain.Entities.Foods;
 using BetaCinema.Domain.Entities.Notifications;
 using BetaCinema.Domain.Entities.Orders;
@@ -87,6 +88,12 @@ namespace BetaCinema.Persistence.DBContext
         public DbSet<Notification> Notifications { get; set; }
 
         public DbSet<UserNotification> UserNotifications{ get; set; }
+
+        public DbSet<MovieReview> MovieReviews { get; set; }
+
+        public DbSet<ReviewComment> ReviewComments { get; set; }
+
+        public DbSet<Reaction> Reactions { get; set; }
 
         public DbSet<WatchList> WatchLists { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

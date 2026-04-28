@@ -1,4 +1,5 @@
-﻿using BetaCinema.Domain.Interfaces;
+﻿using BetaCinema.Domain.Entities.Discussions;
+using BetaCinema.Domain.Interfaces;
 using System.Xml.Schema;
 
 namespace BetaCinema.Domain.Entities.ShowTimes
@@ -29,5 +30,7 @@ namespace BetaCinema.Domain.Entities.ShowTimes
 
         public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
         public virtual ICollection<WatchList> WatchLists { get; set; } = new List<WatchList>();
+
+        public virtual ICollection<MovieReview> MovieReviews { get; set; } = new List<MovieReview>();
     }
 }

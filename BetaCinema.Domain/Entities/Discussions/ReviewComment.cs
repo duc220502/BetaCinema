@@ -15,23 +15,34 @@ namespace BetaCinema.Domain.Entities.Discussions
 
         public string Content { get; set; } = string.Empty;
 
-        public int ReplyCount { get; set; }
-        public int LikeCount { get; set; }
         public bool IsEdited { get; set; }
         public CommentStatus Status { get; set; } 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
 
+        public int LikeCount { get; set; }
+        public int LoveCount { get; set; }
+        public int HahaCount { get; set; }
+        public int WowCount { get; set; }
+        public int SadCount { get; set; }
+        public int AngryCount { get; set; }
+        public int ReactionCount { get; set; }
+        public int ReplyCount { get; set; }
+
+
         public int Depth { get; set; } = 1;
+
+        public Guid? RootCommentId { get; set; }
+        public virtual ReviewComment? RootComment { get; set; }
+
 
         public Guid? ParentCommentId { get; set; }
         public virtual ReviewComment? ParentComment { get; set; }
 
 
+
         public Guid? ReplyToCommentId { get; set; }
         public virtual ReviewComment? ReplyToComment { get; set; }
-
-
 
         public Guid? MentionUserId { get; set; }
         public virtual User? MentionUser { get; set; }
@@ -43,11 +54,10 @@ namespace BetaCinema.Domain.Entities.Discussions
         public Guid UserId { get; set; }
         public virtual User? User { get; set; }
 
-
-
-        public ICollection<ReviewComment> ChildComments { get; set; } = new List<ReviewComment>();
-        public ICollection<ReviewComment> ReplyReferences { get; set; } = new List<ReviewComment>();
-
+        public virtual ICollection<ReviewComment> ChildComments { get; set; } = new List<ReviewComment>();
+        public virtual ICollection<ReviewComment> ReplyReferences { get; set; } = new List<ReviewComment>();
+        public virtual ICollection<ReviewComment> RootComments { get; set; } = new List<ReviewComment>();
+        public virtual ICollection<Reaction> Reactions { get; set; } = new List<Reaction>();
 
 
     }

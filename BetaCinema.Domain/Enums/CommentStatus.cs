@@ -8,8 +8,9 @@ namespace BetaCinema.Domain.Enums
 {
     public enum CommentStatus
     {
-        Active = 1,
-        Hidden = 2,
-        Deleted = 3
+        Published = 1,
+        UnderReview = 2,
+        Hidden = 3,
+        Deleted = 4
     }
 }
